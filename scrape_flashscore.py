@@ -5,7 +5,7 @@ from selenium.webdriver.firefox.options import Options # https://stackoverflow.c
 import time # https://www.tutorialspoint.com/python/time_sleep
 import re # https://www.w3schools.com/python/python_regex.asp
 
-def scrape_flashscore(*urls):
+def scrape_flashscore(*hrefs):
     
     lst_df = []
     
@@ -14,10 +14,10 @@ def scrape_flashscore(*urls):
     opt.headless = True
     wd = webdriver.Firefox(executable_path = "./geckodriver.exe", options = opt)
     
-    for url in urls:
+    for href in hrefs:
     
         # Indo até a página
-        wd.get(url)
+        wd.get("https://www.flashscore.com" + href + "results/")
     
         # Clicando no mostrar mais até que não dê mais
         stop = False
@@ -25,7 +25,7 @@ def scrape_flashscore(*urls):
             try:
                 show_more = wd.find_element_by_css_selector(".event__more--static") 
                 show_more.click()
-                time.sleep(1)
+                time.sleep(2)
             except:
                 stop = True        
         
@@ -45,7 +45,17 @@ def scrape_flashscore(*urls):
         tournament = we.text
     
         # Separando as informações das linhas e preparando o output
-        rows = [row[13:row.rfind("(")-1].replace("\n", " ") for row in rows]
+        rows = [re.sub("\s\([A-Za-z]*\)", "", row) for row in rows] # Flamengo RJ (Bra) -> Flamengo RJ na Libertadores
+        rows = [re.sub("\\nAwarded", "", row) for row in rows]
+        rows = [re.sub("\((?=[^0-9])", "[", row) for row in rows]
+        rows = [re.sub("(?<=[^0-9])\)", "]", row) for row in rows] 
+        
+        for i in range(len(rows)):
+            last_par = rows[i].rfind("(")
+            if last_par != -1 and rows[i][-1] == ")":
+                rows[i] = rows[i][13:last_par-1].replace("\n", " ") 
+            else:
+                rows[i] = rows[i][13:].replace("\n", " ") 
     
         club_1 = []
         club_2 = []
