@@ -25,7 +25,7 @@ def scrape_flashscore(*hrefs):
             try:
                 show_more = wd.find_element_by_css_selector(".event__more--static") 
                 show_more.click()
-                time.sleep(2)
+                time.sleep(3)
             except:
                 stop = True        
         
