@@ -73,12 +73,16 @@ def scrape_flashscore(*hrefs):
                 par_1.append(None)
                 par_2.append(None)
             rows[i] = re.sub("\(.*\)", "", rows[i])
-            placar_1 = re.search(".*(?=\s\s-)", rows[i]).group()
-            goals_1.append(int(placar_1[placar_1.rfind(" ")+1:]))
-            club_1.append(placar_1[:placar_1.rfind(" ")])
-            placar_2 = re.search("(?<=-\s\s).*", rows[i]).group()
-            goals_2.append(int(placar_2[:placar_2.find(" ")]))
-            club_2.append(placar_2[placar_2.find(" "):].strip())
+            tmp_1 = re.search(".*(?=\s\s-)", rows[i])
+            if tmp_1 != None: # Se não tiver o resultado, não pegar
+                tmp_1 = tmp_1.group()
+                goals_1.append(int(tmp_1[tmp_1.rfind(" ")+1:]))
+                club_1.append(tmp_1[:tmp_1.rfind(" ")])
+            tmp_2 = re.search("(?<=-\s\s).*", rows[i])
+            if tmp_2 != None:
+                tmp_2 = tmp_2.group()
+                goals_2.append(int(tmp_2[:tmp_2.find(" ")]))
+                club_2.append(tmp_2[tmp_2.find(" "):].strip())
             
         # Salvando o data frame na lista
         df = pd.DataFrame(list(zip(date, club_1, goals_1, par_1, club_2, goals_2, par_2)), 
