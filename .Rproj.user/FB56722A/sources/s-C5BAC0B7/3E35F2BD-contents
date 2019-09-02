@@ -1,0 +1,9 @@
+
+teste = c("Brasil, Argentina")
+
+case_when(teste, 
+          "Brasil" ~ 1,
+          "Argentina" ~ 3)
+
+Argentina
+B
