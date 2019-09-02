@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1567382390441.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3947795802",
+    "id" : "CC6B0E29",
+    "lastKnownWriteTime" : 1567382633,
+    "last_content_update" : 1567382633097,
+    "path" : "~/GitHub/FDS-Final-Project/app.R",
+    "project_path" : "app.R",
+    "properties" : {
+        "cursorPosition" : "225,58",
+        "scrollLine" : "218"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
