@@ -1,0 +1,2 @@
+"0","partidas = partidas %>%"
+"0","  filter(file != ""Continentais"") # pra não dar problema lá embaixo, tem times que só estão nos continentais, Monarcas por exemplo"

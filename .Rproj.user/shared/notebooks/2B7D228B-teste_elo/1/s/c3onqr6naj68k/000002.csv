@@ -1,0 +1,3 @@
+"0","for(i in 1:length(clubes_meses)) {"
+"0","  clubes_meses[[i]]$Data = tercas[i+1]"
+"0","}"

@@ -1,0 +1,6 @@
+"0","partidas_meses = list()"
+"0","for(i in 1:(length(tercas)-1)) {"
+"0","  partidas_meses[[i]] = partidas %>%"
+"0","    filter(date >= tercas[i],"
+"0","           date < tercas[i+1])"
+"0","}"

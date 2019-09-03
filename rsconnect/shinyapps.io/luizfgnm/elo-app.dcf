@@ -5,9 +5,9 @@ account: luizfgnm
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1134396
-bundleId: 2379137
+bundleId: 2379448
 url: https://luizfgnm.shinyapps.io/elo-app/
-when: 1567463171.61896
+when: 1567473052.46476
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: .gitattributes|exemplo.R|geckodriver.exe|geckodriver.log|get_hrefs.py|scrape.ipynb|scrape_flashscore.py|scrape_test.ipynb|__pycache__/get_hrefs.cpython-36.pyc|__pycache__/scrape_flashscore.cpython-36.pyc
+ignoredFiles: .gitattributes|exemplo.R|exemplo.RData|geckodriver.exe|geckodriver.log|get_hrefs.py|scrape.ipynb|scrape_flashscore.py|scrape_test.ipynb|teste_elo.nb.html|teste_elo.Rmd|__pycache__/get_hrefs.cpython-36.pyc|__pycache__/scrape_flashscore.cpython-36.pyc|.ipynb_checkpoints|data

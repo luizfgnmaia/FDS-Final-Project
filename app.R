@@ -8,13 +8,14 @@ line_size = 0.75
 # Funções e objetos auxiliares
 #################################################################################
 
-load("exemplo.RData")
+load("dados.RData")
 
-exemplo = exemplo
-clubs = unique(exemplo$Clube)
-paises = unique(exemplo$Pais)
-datas = sort(unique(exemplo$Data))
-
+clubes = dados %>%
+  filter(Data == max(dados$Data)) %>%
+  arrange(desc(Elo)) %>%
+  .$Clube
+paises = sort(unique(dados$Pais))
+datas = sort(unique(dados$Data))
 len_datas = length(datas)
 
 # https://stackoverflow.com/questions/31152960/display-only-months-in-daterangeinput-or-dateinput-for-a-shiny-app-r-programmin/32171132
@@ -98,7 +99,7 @@ delta <- function(x) {
   paste0('<font style="opacity:.5">', ret) # https://stackoverflow.com/questions/10835500/how-to-change-text-transparency-in-html-css
 }
 
-flags_df = tibble(Pais = c("Argentina", "Bolivia", "Brasil", "Chile", "Colômbia", "Equador",
+flags_df = tibble(Pais = c("Argentina", "Bolívia", "Brasil", "Chile", "Colômbia", "Equador",
                             "Paraguai", "Peru", "Uruguai", "Venezuela"),
                   flag = c('<img src="https://flagpedia.net/data/flags/mini/ar.png" width="29" height="20" /></a>',
                            '<img src="https://flagpedia.net/data/flags/mini/bo.png" width="29" height="20" /></a>',
@@ -220,7 +221,7 @@ server <- function(input, output) {
      
     validate(need(!is.na(input$hist_clube), message = "")) # https://stackoverflow.com/questions/42789819/prevent-error-in-shiny-app-render-plot
     
-    p = exemplo %>%
+    p = dados %>%
       filter(Clube %in% input$hist_clube) %>%
       mutate(Mes = paste0("Mês: ", format(Data, "%b/%Y"))) %>%
       ggplot(aes(x = Data, y = Elo, group = 1, text = Mes)) + # https://stackoverflow.com/questions/45948926/ggplotly-text-aesthetic-causing-geom-line-to-not-display
@@ -236,9 +237,9 @@ server <- function(input, output) {
   
   output$hist_ui <- renderUI({
     selectInput("hist_clube",
-                "Clubes",
-                choices = clubs,
-                selected = "Flamengo",
+                "Clube",
+                choices = clubes,
+                selected = "Flamengo RJ",
                 multiple = TRUE)
   })
   
@@ -252,17 +253,20 @@ server <- function(input, output) {
   
   output$rank_table <- renderTable({
     
-    reac_rank_table = reactive(
+    reac_rank_table = reactive({
+      
+      data_atual = datas[which(abs(datas-input$rank_data) == min(abs(datas-input$rank_data)))]
+      data_anterior = datas[which(abs(datas-input$rank_data) == min(abs(datas-input$rank_data)))-1]
 
       if(is.null(input$rank_pais)) {
         
-        atual = exemplo %>%
-          filter(Data == input$rank_data) %>%
+        atual = dados %>%
+          filter(Data == data_atual) %>%
           arrange(desc(Elo)) %>%
           mutate(new_pos = row_number())
         
-        anterior = exemplo %>%
-          filter(Data == datas[which(datas == input$rank_data)-1]) %>%
+        anterior = dados %>%
+          filter(Data == data_anterior) %>%
           arrange(desc(Elo)) %>%
           mutate(old_pos = row_number()) %>%
           rename(old_elo = Elo) %>%
@@ -282,14 +286,14 @@ server <- function(input, output) {
         
       } else {
         
-        atual = exemplo %>%
-          filter(Data == input$rank_data,
+        atual = dados %>%
+          filter(Data == data_atual,
                  Pais %in% input$rank_pais) %>%
           arrange(desc(Elo)) %>%
           mutate(new_pos = row_number())
         
-        anterior = exemplo %>%
-          filter(Data == datas[which(datas == input$rank_data)-1],
+        anterior = dados %>%
+          filter(Data == data_anterior,
                  Pais %in% input$rank_pais) %>%
           arrange(desc(Elo)) %>%
           mutate(old_pos = row_number()) %>%
@@ -309,7 +313,7 @@ server <- function(input, output) {
           select(Clube, 'Elo <font style="opacity:.5"> (variação)')
 
       }
-    )
+    })
       
     reac_rank_table()
     
