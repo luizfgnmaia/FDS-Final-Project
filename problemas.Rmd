@@ -1,0 +1,70 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r, warning = FALSE, message = FALSE}
+library(stringr)
+library(dplyr)
+```
+
+```{r}
+arruma_data <- function(x) {
+  if(nchar(x) == 15) {
+    ano1 = str_sub(x, start = 7, end = 10)
+    ano2 = str_sub(x, start = 12, end = 15)
+    if(as.integer(str_sub(x, start = 4, end = 5)) >= 7) {
+      x = (paste0(str_sub(x, start = 1, end = 6), ano1))
+    } else {
+      x = (paste0(str_sub(x, start = 1, end = 6), ano2))
+    }
+  }
+  as.Date(x, "%d.%m.%Y")
+}
+```
+
+```{r}
+files = list.files("data") 
+
+partidas = files %>%
+  lapply(function(x) read.csv(paste0("data/", x), stringsAsFactors = FALSE, encoding = "UTF-8") %>%
+           mutate(file = str_sub(x, start = 1, end = -5))) %>%
+  do.call(rbind, .) %>%
+  rowwise() %>%
+  mutate(date = arruma_data(date)) %>%
+  filter(date >= "2002-01-01") %>%
+  arrange(date) %>%
+  mutate(result = if_else(goals_1 > goals_2, 1,
+                          if_else(goals_1 == goals_2, 0.5, 0)))
+```
+
+```{r}
+clubes_paises = tibble(Clube = c(partidas$club_1, partidas$club_2),
+                       Pais = c(partidas$file, partidas$file)) %>%
+  distinct(Clube, Pais) %>%
+  filter(Pais != "Continentais") %>%
+  arrange(Clube, Pais)
+```
+
+```{r}
+clubes_continentais = tibble(Clube = c(partidas$club_1, partidas$club_2),
+                       Pais = c(partidas$file, partidas$file)) %>%
+  distinct(Clube, Pais) %>%
+  filter(Pais == "Continentais") %>%
+  arrange(Clube)
+```
+
+```{r}
+setdiff(clubes_continentais$Clube, clubes_paises$Clube)
+```
+
+```{r}
+clubes_paises %>%
+  count(Clube) %>%
+  arrange(desc(n))
+```
+
+```{r}
+write.table(clubes_paises, file = "clubes_paises.csv", sep = ";", na = "", row.names = FALSE)
+```
+

@@ -23,6 +23,7 @@ def scrape_flashscore(*hrefs):
         stop = False
         while stop == False:
             try:
+                time.sleep(1)
                 show_more = wd.find_element_by_css_selector(".event__more--static") 
                 show_more.click()
                 time.sleep(3)
@@ -45,7 +46,7 @@ def scrape_flashscore(*hrefs):
         tournament = we.text
     
         # Separando as informações das linhas e preparando o output
-        rows = [re.sub("\s\([A-Za-z]*\)", "", row) for row in rows] # Flamengo RJ (Bra) -> Flamengo RJ na Libertadores
+        #rows = [re.sub("\s\([A-Za-z]*\)", "", row) for row in rows] # Flamengo RJ (Bra) -> Flamengo RJ na Libertadores
         rows = [re.sub("\\nAwarded", "", row) for row in rows]
         rows = [re.sub("\((?=[^0-9])", "[", row) for row in rows]
         rows = [re.sub("(?<=[^0-9])\)", "]", row) for row in rows] 

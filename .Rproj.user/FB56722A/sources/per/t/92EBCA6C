@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1567549007455.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "92EBCA6C",
+    "lastKnownWriteTime" : 7308604914264011873,
+    "last_content_update" : 1567549007455,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "1DEA666C",
+        "caption" : "clubes_paises",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=clubes_paises&cache_key=1DEA666C",
+        "displayedObservations" : "771",
+        "environment" : "",
+        "object" : "clubes_paises",
+        "preview" : "0",
+        "totalObservations" : "771",
+        "variables" : "2"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

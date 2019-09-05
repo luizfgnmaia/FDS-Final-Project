@@ -1,0 +1,8 @@
+"0","clubes_paises = tibble(Clube = c(partidas$club_1, partidas$club_2),"
+"0","                       Pais = c(partidas$file, partidas$file)) %>%"
+"0","  distinct(Clube, Pais) %>%"
+"0","  filter(Pais != ""Continentais"") %>%"
+"0","  arrange(Clube, Pais)"
+"2","`list_len()` is deprecated as of rlang 0.2.0.
+Please use `new_list()` instead.
+[90mThis warning is displayed once per session.[39m"
