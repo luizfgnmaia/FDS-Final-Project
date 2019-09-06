@@ -66,6 +66,10 @@ tercas
 ```
 
 ```{r}
+write.table(tercas, file = "tercas.csv", sep = ";", na = "", row.names = FALSE, col.names = FALSE)
+```
+
+```{r}
 partidas_meses = list()
 for(i in 1:(length(tercas)-1)) {
   partidas_meses[[i]] = partidas %>%

@@ -1,106 +1,9 @@
 source("dependencies.R") # https://github.com/rstudio/shinydashboard/issues/190
-
-options(OutDec = ",")
-
-text_size = 10
-line_size = 0.75
-
-# Funções e objetos auxiliares
-#################################################################################
-
-load("dados.RData")
-
-clubes = dados %>%
-  filter(Data == max(dados$Data)) %>%
-  arrange(desc(Elo)) %>%
-  .$Clube
-paises = sort(unique(dados$Pais))
-datas = sort(unique(dados$Data))
-len_datas = length(datas)
-
-# https://stackoverflow.com/questions/31152960/display-only-months-in-daterangeinput-or-dateinput-for-a-shiny-app-r-programmin/32171132
-
-mydateInput <- function(inputId, label, value = NULL, min = NULL, max = NULL,
-                        format = "yyyy-mm-dd", startview = "month", weekstart = 0, 
-                        language = "en", minviewmode = "months", width = NULL) {
-  
-  # If value is a date object, convert it to a string with yyyy-mm-dd format
-  # Same for min and max
-  if (inherits(value, "Date"))  value <- format(value, "%Y-%m-%d")
-  if (inherits(min,   "Date"))  min   <- format(min,   "%Y-%m-%d")
-  if (inherits(max,   "Date"))  max   <- format(max,   "%Y-%m-%d")
-  
-  htmltools::attachDependencies(
-    tags$div(id = inputId,
-             class = "shiny-date-input form-group shiny-input-container",
-             style = if (!is.null(width)) paste0("width: ", validateCssUnit(width), ";"),
-             
-             controlLabel(inputId, label),
-             tags$input(type = "text",
-                        # datepicker class necessary for dropdown to display correctly
-                        class = "form-control datepicker",
-                        `data-date-language` = language,
-                        `data-date-weekstart` = weekstart,
-                        `data-date-format` = format,
-                        `data-date-start-view` = startview,
-                        `data-date-min-view-mode` = minviewmode,
-                        `data-min-date` = min,
-                        `data-max-date` = max,
-                        `data-initial-date` = value
-             )
-    ),
-    datePickerDependency
-  )
-}
-
-`%AND%` <- function(x, y) {
-  if (!is.null(x) && !is.na(x))
-    if (!is.null(y) && !is.na(y))
-      return(y)
-  return(NULL)
-}
-
-controlLabel <- function(controlName, label) {
-  label %AND% tags$label(class = "control-label", `for` = controlName, label)
-}
-
-# the datePickerDependency is taken from https://github.com/rstudio/shiny/blob/master/R/input-date.R
-datePickerDependency <- htmltools::htmlDependency(
-  "bootstrap-datepicker", "1.6.4", c(href = "shared/datepicker"),
-  script = "js/bootstrap-datepicker.min.js",
-  stylesheet = "css/bootstrap-datepicker3.min.css",
-  # Need to enable noConflict mode. See #1346.
-  head = "<script>
-  (function() {
-  var datepicker = $.fn.datepicker.noConflict();
-  $.fn.bsDatepicker = datepicker;
-  })();
-  </script>")
-
-tema = theme(
-  panel.grid.minor = element_blank(), 
-  panel.grid.major = element_blank(),
-  panel.background = element_blank(),
-  plot.background = element_blank(),
-  legend.background = element_blank(),
-  legend.key = element_blank(),
-  text = element_text(size = text_size)
-)
-
-up_or_down = function(x) {
-  ifelse(x == "", as.character(icon("horizontal-rule")),
-         ifelse(as.integer(x) > 0, as.character(icon("angle-up")),
-                as.character(icon("angle-down"))))
-}
-
-delta <- function(x) {
-  sinal = ifelse(x >= 0, "+", "-")
-  ret = paste0("(", sinal, round(abs(x), 2), ")")
-  paste0('<font style="opacity:.5">', ret) # https://stackoverflow.com/questions/10835500/how-to-change-text-transparency-in-html-css
-}
+source("aux_shiny.R")
+load("pre_shiny.RData")
 
 flags_df = tibble(Pais = c("Argentina", "Bolívia", "Brasil", "Chile", "Colômbia", "Equador",
-                            "Paraguai", "Peru", "Uruguai", "Venezuela"),
+                           "Paraguai", "Peru", "Uruguai", "Venezuela"),
                   flag = c('<img src="https://flagpedia.net/data/flags/mini/ar.png" width="29" height="20" /></a>',
                            '<img src="https://flagpedia.net/data/flags/mini/bo.png" width="29" height="20" /></a>',
                            '<img src="https://flagpedia.net/data/flags/mini/br.png" width="29" height="20" /></a>',
@@ -112,9 +15,10 @@ flags_df = tibble(Pais = c("Argentina", "Bolívia", "Brasil", "Chile", "Colômbi
                            '<img src="https://flagpedia.net/data/flags/mini/uy.png" width="29" height="20" /></a>',
                            '<img src="https://flagpedia.net/data/flags/mini/ve.png" width="29" height="20" /></a>'))
 
-#################################################################################
+options(OutDec = ",")
 
-# sidebar
+line_size = 0.75
+
 #################################################################################
 
 sidebar <- dashboardSidebar(
@@ -122,7 +26,9 @@ sidebar <- dashboardSidebar(
     menuItem("Introdução", icon = icon("youtube"), tabName = "int"), # https://fontawesome.com/icons?from=io
     menuItem("Rankings", icon = icon("trophy"), tabName = "rank"),
     menuItem("Histórico", icon = icon("chart-line"), tabName = "hist"),
-    menuItem("Estatísticas", icon = icon("chart-bar"), tabName = "stats"),
+    menuItem("Estatísticas", icon = icon("chart-bar"), tabName = "stats",
+             menuSubItem("Melhores clubes", tabName = "melhores_clubes"),
+             menuSubItem("Mais tempo na liderança", tabName = "tempo_lideranca")),
     menuItem("Metodologia", icon = icon("question"), tabName = "metod"),
     menuItem("Github", icon = icon("github"), href = "https://github.com/luizfgnmaia/FDS-Final-Project")
   )
@@ -194,8 +100,11 @@ body <- dashboardBody(
     # Estatísticas
     #################################################################################
     
-    tabItem(tabName = "stats",
-            "Obina > Eto'o"),
+    tabItem(tabName = "melhores_clubes",
+            tableOutput("stats_melhores_clubes")),
+    
+    tabItem(tabName = "tempo_lideranca",
+            tableOutput("stats_tempo_lideranca")),
     
     #################################################################################
     
@@ -223,7 +132,7 @@ server <- function(input, output) {
     
     p = dados %>%
       filter(Clube %in% input$hist_clube) %>%
-      mutate(Mes = paste0("Mês: ", format(Data, "%b/%Y"))) %>%
+      mutate(Mes = paste0("Mês: ", format(Data, "%b %Y"))) %>%
       ggplot(aes(x = Data, y = Elo, group = 1, text = Mes)) + # https://stackoverflow.com/questions/45948926/ggplotly-text-aesthetic-causing-geom-line-to-not-display
       geom_line(aes(color = Clube), size = line_size) +
       tema +
@@ -319,6 +228,17 @@ server <- function(input, output) {
     
   }, rownames = TRUE, striped = TRUE, hover = TRUE, width = 700,
   sanitize.text.function = function(x) x) # https://www.oipapio.com/question-8798651
+  
+  output$stats_melhores_clubes <- renderTable(melhores_clubes, rownames = TRUE, 
+                                        striped = TRUE, hover = TRUE, width = 700,
+                                        sanitize.text.function = function(x) x)
+  
+  output$stats_tempo_lideranca <- renderTable(maiores_streaks %>%
+                                                rename(Até = Ate), 
+                                              rownames = TRUE, 
+                                              striped = TRUE, hover = TRUE, width = 700,
+                                              sanitize.text.function = function(x) x,
+                                              na = " ")
   
   #output$debug = renderText(input$rank_pais)
 }
