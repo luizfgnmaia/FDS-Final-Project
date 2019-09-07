@@ -4,16 +4,16 @@
     "created" : 1567472613932.000,
     "dirty" : false,
     "encoding" : "UTF-8",
-    "folds" : "42|85|67|4|\n89|85|96|4|\n111|85|114|4|\n128|36|144|2|\n146|30|152|2|\n154|30|160|2|\n",
-    "hash" : "2241850859",
+    "folds" : "42|85|67|4|\n89|85|96|4|\n111|85|114|4|\n128|36|144|2|\n154|30|160|2|\n164|32|224|4|\n",
+    "hash" : "1771549515",
     "id" : "D9BEA0BC",
-    "lastKnownWriteTime" : 1567805860,
-    "last_content_update" : 1567805860864,
+    "lastKnownWriteTime" : 1567820862,
+    "last_content_update" : 1567820862863,
     "path" : "~/GitHub/FDS-Final-Project/app.R",
     "project_path" : "app.R",
     "properties" : {
-        "cursorPosition" : "15,116",
-        "scrollLine" : "0"
+        "cursorPosition" : "122,28",
+        "scrollLine" : "107"
     },
     "relative_order" : 1,
     "source_on_save" : false,

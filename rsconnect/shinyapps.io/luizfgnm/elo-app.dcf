@@ -5,9 +5,9 @@ account: luizfgnm
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1134396
-bundleId: 2392951
+bundleId: 2393445
 url: https://luizfgnm.shinyapps.io/elo-app/
-when: 1567805902.42567
+when: 1567820897.08109
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: .gitattributes|clubes_paises.csv|dados.RData|geckodriver.exe|geckodriver.log|get_hrefs.py|MontarBase.py|pre_shiny.R|PrepararJogos.py|problemas.nb.html|problemas.Rmd|scrape.ipynb|scrape_flashscore.py|scrape_test.ipynb|teams.csv|tercas.csv|teste_elo.nb.html|teste_elo.Rmd|update_scrape.ipynb|__pycache__/get_hrefs.cpython-36.pyc|__pycache__/scrape_flashscore.cpython-36.pyc|.ipynb_checkpoints|data
+ignoredFiles: .gitattributes|clubes_paises.csv|CriaJogosId.py|EloRating.py|geckodriver.exe|geckodriver.log|get_hrefs.py|MontarBase.py|pre_shiny.R|PrepararJogos.py|PrepJogosSulamerica.py|RemoveDuplicatas.py|scrape.ipynb|scrape_flashscore.py|scrape_test.ipynb|teams.csv|tercas.csv|update_scrape.ipynb|__pycache__/get_hrefs.cpython-36.pyc|__pycache__/scrape_flashscore.cpython-36.pyc|.ipynb_checkpoints|data

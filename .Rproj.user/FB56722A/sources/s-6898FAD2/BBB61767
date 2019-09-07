@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1703559186",
+    "hash" : "3375233509",
     "id" : "BBB61767",
-    "lastKnownWriteTime" : 1567805826,
-    "last_content_update" : 1567805826768,
+    "lastKnownWriteTime" : 1567820770,
+    "last_content_update" : 1567820770143,
     "path" : "~/GitHub/FDS-Final-Project/pre_shiny.R",
     "project_path" : "pre_shiny.R",
     "properties" : {
-        "cursorPosition" : "6,0",
-        "scrollLine" : "0"
+        "cursorPosition" : "107,0",
+        "scrollLine" : "11"
     },
     "relative_order" : 2,
     "source_on_save" : false,

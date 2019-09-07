@@ -1,8 +1,30 @@
 
 library(dplyr)
+
 source("aux_shiny.R")
 
-load("dados.RData")
+dados = read.csv("data/ranktodos.csv", stringsAsFactors = FALSE) %>%
+  select(-X) %>%
+  rename(Clube = nome,
+         Pais = pais,
+         Elo = rate,
+         Data = date) %>%
+  mutate(Data = as.Date(Data, format = "%Y.%m.%d"))
+
+dados$Clube[which(dados$id == 618)] = "River Plate (Par)"
+dados$Clube[which(dados$id == 826)] = "River Plate (Uru)"
+dados$Clube[which(dados$id == 414)] = "Fortaleza (Col)"
+dados$Clube[which(dados$id == 611)] = "Guarani (Par)"
+dados$Clube[which(dados$id == 113)] = "Independiente (Bol)"
+dados$Clube[which(dados$id == 928)] = "Portuguesa (Ven)"
+dados$Clube[which(dados$id == 620)] = "San Lorenzo (Par)"
+dados$Clube[which(dados$id == 124)] = "Santa Cruz (Bol)"
+dados$Clube[which(dados$id == 732)] = "Sport Boys (Per)"
+dados$Clube[which(dados$id == 525)] = "U. Catolica (Equ)"
+
+dados$Pais[which(dados$Pais == "Bolivia")] = "Bolívia"
+dados$Pais[which(dados$Pais == "Colombia")] = "Colômbia"
+
 
 flags_df = tibble(Pais = c("Argentina", "Bolívia", "Brasil", "Chile", "Colômbia", "Equador",
                            "Paraguai", "Peru", "Uruguai", "Venezuela"),

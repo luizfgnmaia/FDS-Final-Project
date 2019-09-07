@@ -148,7 +148,7 @@ server <- function(input, output) {
     selectInput("hist_clube",
                 "Clube",
                 choices = clubes,
-                selected = "Flamengo RJ",
+                selected = clubes[1],
                 multiple = TRUE)
   })
   
