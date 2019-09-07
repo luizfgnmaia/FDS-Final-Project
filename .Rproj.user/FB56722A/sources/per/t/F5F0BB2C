@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1567868885872.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3553161663",
+    "id" : "F5F0BB2C",
+    "lastKnownWriteTime" : 1567870269,
+    "last_content_update" : 1567870269573,
+    "path" : "~/GitHub/FDS-Final-Project/atualizando.R",
+    "project_path" : "atualizando.R",
+    "properties" : {
+        "cursorPosition" : "33,0",
+        "scrollLine" : "7",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

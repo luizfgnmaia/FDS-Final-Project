@@ -1,0 +1,420 @@
+date,club_1,goals_1,par_1,club_2,goals_2,par_2,tournament
+01.09.2019,Atl. Nacional,1,,Millonarios,1,,Liga Aguila
+01.09.2019,Bucaramanga,0,,Junior,0,,Liga Aguila
+01.09.2019,Huila,0,,Deportes Tolima,1,,Liga Aguila
+01.09.2019,Santa Fe,2,,Ind. Medellin,0,,Liga Aguila
+01.09.2019,Dep. Cali,3,,Dep. Pasto,1,,Liga Aguila
+31.08.2019,Envigado,3,,Aguilas,3,,Liga Aguila
+31.08.2019,Jaguares de Cordoba,1,,Patriotas,1,,Liga Aguila
+31.08.2019,Once Caldas,2,,America De Cali,1,,Liga Aguila
+31.08.2019,U. Magdalena,1,,Cucuta,2,,Liga Aguila
+31.08.2019,La Equidad,1,,Petrolera,2,,Liga Aguila
+26.08.2019,Deportes Tolima,2,,Jaguares de Cordoba,0,,Liga Aguila
+25.08.2019,America De Cali,1,,Envigado,0,,Liga Aguila
+25.08.2019,Aguilas,1,,Santa Fe,0,,Liga Aguila
+25.08.2019,Atl. Nacional,5,,Ind. Medellin,2,,Liga Aguila
+25.08.2019,Petrolera,1,,Huila,0,,Liga Aguila
+25.08.2019,Patriotas,0,,Bucaramanga,1,,Liga Aguila
+24.08.2019,Millonarios,2,,Dep. Cali,1,,Liga Aguila
+24.08.2019,Cucuta,2,,La Equidad,1,,Liga Aguila
+24.08.2019,Junior,0,,Once Caldas,1,,Liga Aguila
+24.08.2019,Dep. Pasto,2,,U. Magdalena,0,,Liga Aguila
+22.08.2019,Santa Fe,1,,America De Cali,2,,Liga Aguila
+22.08.2019,Ind. Medellin,1,,Aguilas,2,,Liga Aguila
+22.08.2019,Jaguares de Cordoba,0,,Petrolera,0,,Liga Aguila
+21.08.2019,Dep. Cali,0,,Atl. Nacional,0,,Liga Aguila
+21.08.2019,Envigado,0,,Junior,0,,Liga Aguila
+21.08.2019,Once Caldas,2,,Patriotas,2,,Liga Aguila
+21.08.2019,Bucaramanga,1,,Deportes Tolima,1,,Liga Aguila
+20.08.2019,Dep. Pasto,4,,Huila,0,,Liga Aguila
+18.08.2019,Dep. Cali,1,,Ind. Medellin,0,,Liga Aguila
+18.08.2019,Atl. Nacional,3,,U. Magdalena,1,,Liga Aguila
+18.08.2019,Junior,1,,Santa Fe,0,,Liga Aguila
+18.08.2019,Petrolera,1,,Bucaramanga,0,,Liga Aguila
+17.08.2019,Deportes Tolima,0,,Once Caldas,0,,Liga Aguila
+17.08.2019,Cucuta,1,,Jaguares de Cordoba,1,,Liga Aguila
+17.08.2019,America De Cali,1,,Aguilas,1,,Liga Aguila
+17.08.2019,Millonarios,3,,La Equidad,2,,Liga Aguila
+16.08.2019,Patriotas,3,,Envigado,0,,Liga Aguila
+11.08.2019,Bucaramanga,2,,Cucuta,0,,Liga Aguila
+11.08.2019,Aguilas,1,,Junior,0,,Liga Aguila
+11.08.2019,Huila,1,,Millonarios,1,,Liga Aguila
+11.08.2019,Jaguares de Cordoba,1,,Dep. Pasto,1,,Liga Aguila
+11.08.2019,Santa Fe,0,,Patriotas,0,,Liga Aguila
+10.08.2019,Ind. Medellin,4,,America De Cali,1,,Liga Aguila
+10.08.2019,Envigado,2,,Deportes Tolima,1,,Liga Aguila
+10.08.2019,La Equidad,0,,Atl. Nacional,0,,Liga Aguila
+10.08.2019,U. Magdalena,2,,Dep. Cali,0,,Liga Aguila
+09.08.2019,Once Caldas,0,,Petrolera,0,,Liga Aguila
+06.08.2019,Atl. Nacional,4,,Huila,1,,Liga Aguila
+05.08.2019,Dep. Pasto,1,,Bucaramanga,1,,Liga Aguila
+04.08.2019,Deportes Tolima,4,,Santa Fe,0,,Liga Aguila
+04.08.2019,Patriotas,2,,Aguilas,0,,Liga Aguila
+04.08.2019,Junior,0,,America De Cali,1,,Liga Aguila
+04.08.2019,Petrolera,1,,Envigado,0,,Liga Aguila
+03.08.2019,Millonarios,2,,Jaguares de Cordoba,1,,Liga Aguila
+03.08.2019,Cucuta,1,,Once Caldas,1,,Liga Aguila
+03.08.2019,Dep. Cali,2,,La Equidad,0,,Liga Aguila
+03.08.2019,U. Magdalena,1,,Ind. Medellin,1,,Liga Aguila
+28.07.2019,Ind. Medellin,0,,Junior,1,,Liga Aguila
+28.07.2019,Santa Fe,0,,Petrolera,1,,Liga Aguila
+28.07.2019,Jaguares de Cordoba,1,,Atl. Nacional,1,,Liga Aguila
+28.07.2019,Huila,2,,Dep. Cali,2,,Liga Aguila
+27.07.2019,Once Caldas,3,,Dep. Pasto,1,,Liga Aguila
+27.07.2019,La Equidad,2,,U. Magdalena,0,,Liga Aguila
+27.07.2019,Bucaramanga,1,,Millonarios,2,,Liga Aguila
+27.07.2019,Envigado,4,,Cucuta,1,,Liga Aguila
+26.07.2019,Aguilas,0,,Deportes Tolima,2,,Liga Aguila
+25.07.2019,America De Cali,1,,Patriotas,1,,Liga Aguila
+22.07.2019,La Equidad,0,,Ind. Medellin,1,,Liga Aguila
+21.07.2019,Atl. Nacional,0,,Bucaramanga,0,,Liga Aguila
+21.07.2019,Patriotas,2,,Junior,0,,Liga Aguila
+21.07.2019,Millonarios,1,,Once Caldas,0,,Liga Aguila
+21.07.2019,Petrolera,2,,Aguilas,2,,Liga Aguila
+20.07.2019,Deportes Tolima,0,,America De Cali,1,,Liga Aguila
+20.07.2019,Cucuta,1,,Santa Fe,0,,Liga Aguila
+20.07.2019,Dep. Cali,4,,Jaguares de Cordoba,0,,Liga Aguila
+20.07.2019,U. Magdalena,0,,Huila,0,,Liga Aguila
+19.07.2019,Envigado,1,,Dep. Pasto,1,,Liga Aguila
+16.07.2019,Bucaramanga,0,,Dep. Cali,1,,Liga Aguila
+15.07.2019,Aguilas,1,,Cucuta,3,,Liga Aguila
+14.07.2019,Ind. Medellin,3,,Patriotas,0,,Liga Aguila
+14.07.2019,America De Cali,2,,Petrolera,1,,Liga Aguila
+14.07.2019,Millonarios,1,,Envigado,2,,Liga Aguila
+14.07.2019,Dep. Pasto,0,,Santa Fe,0,,Liga Aguila
+13.07.2019,Once Caldas,1,,Atl. Nacional,2,,Liga Aguila
+13.07.2019,Jaguares de Cordoba,1,,U. Magdalena,0,,Liga Aguila
+13.07.2019,Junior,1,,Deportes Tolima,0,,Liga Aguila
+13.07.2019,Huila,3,,La Equidad,2,,Liga Aguila
+12.06.2019,Dep. Pasto,1,1.0,Junior,1,0.0,Liga Aguila
+08.06.2019,Junior,1,,Dep. Pasto,0,,Liga Aguila
+05.06.2019,Atl. Nacional,2,,Junior,3,,Liga Aguila
+05.06.2019,Dep. Cali,1,,Deportes Tolima,2,,Liga Aguila
+05.06.2019,Dep. Pasto,3,,U. Magdalena,0,,Liga Aguila
+05.06.2019,Millonarios,1,,America De Cali,2,,Liga Aguila
+02.06.2019,Junior,2,,Dep. Cali,0,,Liga Aguila
+02.06.2019,Deportes Tolima,2,,Atl. Nacional,1,,Liga Aguila
+01.06.2019,America De Cali,0,,Dep. Pasto,3,,Liga Aguila
+01.06.2019,U. Magdalena,1,,Millonarios,1,,Liga Aguila
+26.05.2019,Dep. Cali,0,,Atl. Nacional,1,,Liga Aguila
+26.05.2019,Deportes Tolima,1,,Junior,1,,Liga Aguila
+25.05.2019,Millonarios,1,,Dep. Pasto,0,,Liga Aguila
+22.05.2019,America De Cali,4,,U. Magdalena,0,,Liga Aguila
+19.05.2019,Junior,1,,Deportes Tolima,1,,Liga Aguila
+19.05.2019,Atl. Nacional,1,,Dep. Cali,3,,Liga Aguila
+18.05.2019,U. Magdalena,0,,America De Cali,2,,Liga Aguila
+18.05.2019,Dep. Pasto,1,,Millonarios,1,,Liga Aguila
+16.05.2019,Atl. Nacional,1,,Deportes Tolima,2,,Liga Aguila
+16.05.2019,Dep. Cali,1,,Junior,2,,Liga Aguila
+15.05.2019,Millonarios,1,,U. Magdalena,0,,Liga Aguila
+15.05.2019,Dep. Pasto,1,,America De Cali,0,,Liga Aguila
+13.05.2019,Deportes Tolima,1,,Dep. Cali,1,,Liga Aguila
+12.05.2019,Junior,0,,Atl. Nacional,0,,Liga Aguila
+12.05.2019,America De Cali,1,,Millonarios,2,,Liga Aguila
+11.05.2019,U. Magdalena,1,,Dep. Pasto,3,,Liga Aguila
+05.05.2019,La Equidad,3,,Bucaramanga,1,,Liga Aguila
+05.05.2019,Millonarios,1,,Aguilas,1,,Liga Aguila
+05.05.2019,Atl. Nacional,2,,Santa Fe,1,,Liga Aguila
+05.05.2019,Cucuta,2,,Junior,1,,Liga Aguila
+05.05.2019,Dep. Cali,1,,Envigado,0,,Liga Aguila
+05.05.2019,Dep. Pasto,1,,America De Cali,1,,Liga Aguila
+05.05.2019,Deportes Tolima,0,,Ind. Medellin,1,,Liga Aguila
+05.05.2019,Petrolera,3,,Patriotas,0,,Liga Aguila
+05.05.2019,U. Magdalena,1,,Once Caldas,0,,Liga Aguila
+04.05.2019,Huila,0,,Jaguares de Cordoba,2,,Liga Aguila
+02.05.2019,America De Cali,2,,Cucuta,0,,Liga Aguila
+02.05.2019,Junior,1,,Petrolera,1,,Liga Aguila
+02.05.2019,Bucaramanga,0,,U. Magdalena,1,,Liga Aguila
+01.05.2019,Ind. Medellin,2,,Huila,1,,Liga Aguila
+01.05.2019,Jaguares de Cordoba,1,,La Equidad,1,,Liga Aguila
+01.05.2019,Santa Fe,0,,Millonarios,0,,Liga Aguila
+01.05.2019,Aguilas,2,,Dep. Pasto,1,,Liga Aguila
+01.05.2019,Patriotas,1,,Deportes Tolima,0,,Liga Aguila
+30.04.2019,Envigado,4,,Atl. Nacional,0,,Liga Aguila
+28.04.2019,Cucuta,0,,Deportes Tolima,2,,Liga Aguila
+28.04.2019,Huila,1,,Once Caldas,0,,Liga Aguila
+28.04.2019,Millonarios,2,,Junior,0,,Liga Aguila
+28.04.2019,Jaguares de Cordoba,1,,Bucaramanga,1,,Liga Aguila
+28.04.2019,Dep. Pasto,1,,Patriotas,1,,Liga Aguila
+27.04.2019,Petrolera,1,,Ind. Medellin,1,,Liga Aguila
+27.04.2019,Atl. Nacional,2,,America De Cali,0,,Liga Aguila
+27.04.2019,Dep. Cali,2,,Aguilas,1,,Liga Aguila
+27.04.2019,U. Magdalena,3,,Santa Fe,1,,Liga Aguila
+27.04.2019,La Equidad,0,,Envigado,1,,Liga Aguila
+24.04.2019,Atl. Nacional,1,,Ind. Medellin,0,,Liga Aguila
+24.04.2019,Once Caldas,4,,Dep. Cali,0,,Liga Aguila
+24.04.2019,La Equidad,2,,Aguilas,2,,Liga Aguila
+22.04.2019,Bucaramanga,2,,Huila,4,,Liga Aguila
+21.04.2019,Aguilas,2,,Atl. Nacional,1,,Liga Aguila
+21.04.2019,Junior,0,,Dep. Pasto,0,,Liga Aguila
+21.04.2019,America De Cali,1,,Millonarios,1,,Liga Aguila
+21.04.2019,Envigado,1,,U. Magdalena,1,,Liga Aguila
+21.04.2019,Patriotas,1,,Cucuta,0,,Liga Aguila
+20.04.2019,Santa Fe,1,,Dep. Cali,2,,Liga Aguila
+20.04.2019,Ind. Medellin,3,,Jaguares de Cordoba,0,,Liga Aguila
+20.04.2019,Deportes Tolima,2,,Petrolera,2,,Liga Aguila
+20.04.2019,Once Caldas,1,,La Equidad,0,,Liga Aguila
+18.04.2019,Atl. Nacional,4,,Patriotas,0,,Liga Aguila
+18.04.2019,U. Magdalena,0,,America De Cali,3,,Liga Aguila
+17.04.2019,Dep. Cali,0,,Junior,0,,Liga Aguila
+17.04.2019,Millonarios,1,,Deportes Tolima,2,,Liga Aguila
+17.04.2019,Huila,0,,Santa Fe,3,,Liga Aguila
+17.04.2019,Jaguares de Cordoba,2,,Envigado,2,,Liga Aguila
+17.04.2019,Dep. Pasto,1,,Petrolera,0,,Liga Aguila
+16.04.2019,Bucaramanga,1,,Once Caldas,1,,Liga Aguila
+14.04.2019,America De Cali,0,,Dep. Cali,1,,Liga Aguila
+14.04.2019,Deportes Tolima,0,,Dep. Pasto,0,,Liga Aguila
+14.04.2019,Envigado,1,,Huila,1,,Liga Aguila
+14.04.2019,Junior,0,,Atl. Nacional,0,,Liga Aguila
+14.04.2019,Patriotas,1,,Millonarios,3,,Liga Aguila
+14.04.2019,Petrolera,0,,Cucuta,1,,Liga Aguila
+13.04.2019,Ind. Medellin,4,,Bucaramanga,0,,Liga Aguila
+13.04.2019,Santa Fe,1,,La Equidad,1,,Liga Aguila
+13.04.2019,Once Caldas,0,,Jaguares de Cordoba,1,,Liga Aguila
+13.04.2019,Aguilas,0,,U. Magdalena,1,,Liga Aguila
+08.04.2019,Once Caldas,1,,Envigado,0,,Liga Aguila
+07.04.2019,Millonarios,1,,Cucuta,0,,Liga Aguila
+07.04.2019,Bucaramanga,2,,Santa Fe,1,,Liga Aguila
+07.04.2019,Atl. Nacional,1,,Petrolera,0,,Liga Aguila
+07.04.2019,Jaguares de Cordoba,2,,Aguilas,0,,Liga Aguila
+07.04.2019,Dep. Pasto,1,,Ind. Medellin,0,,Liga Aguila
+06.04.2019,La Equidad,2,,Junior,2,,Liga Aguila
+06.04.2019,Huila,2,,America De Cali,1,,Liga Aguila
+06.04.2019,U. Magdalena,4,,Patriotas,0,,Liga Aguila
+04.04.2019,Ind. Medellin,1,,Once Caldas,1,,Liga Aguila
+04.04.2019,Santa Fe,0,,Jaguares de Cordoba,0,,Liga Aguila
+03.04.2019,Petrolera,0,,Millonarios,2,,Liga Aguila
+03.04.2019,Cucuta,1,,Dep. Pasto,3,,Liga Aguila
+03.04.2019,Envigado,1,,Bucaramanga,2,,Liga Aguila
+02.04.2019,America De Cali,1,,La Equidad,3,,Liga Aguila
+02.04.2019,Aguilas,0,,Huila,0,,Liga Aguila
+31.03.2019,Envigado,0,,Santa Fe,0,,Liga Aguila
+31.03.2019,Millonarios,3,,Ind. Medellin,2,,Liga Aguila
+31.03.2019,Dep. Cali,2,,Cucuta,0,,Liga Aguila
+31.03.2019,U. Magdalena,1,,Petrolera,1,,Liga Aguila
+30.03.2019,Atl. Nacional,0,,Dep. Pasto,1,,Liga Aguila
+30.03.2019,Once Caldas,2,,Aguilas,0,,Liga Aguila
+30.03.2019,Bucaramanga,0,,America De Cali,0,,Liga Aguila
+30.03.2019,Jaguares de Cordoba,1,,Junior,1,,Liga Aguila
+30.03.2019,La Equidad,0,,Deportes Tolima,0,,Liga Aguila
+29.03.2019,Huila,1,,Patriotas,1,,Liga Aguila
+28.03.2019,Millonarios,1,,Santa Fe,1,,Liga Aguila
+28.03.2019,Cucuta,2,,Ind. Medellin,2,,Liga Aguila
+27.03.2019,Deportes Tolima,2,,Atl. Nacional,1,,Liga Aguila
+27.03.2019,Junior,1,,U. Magdalena,1,,Liga Aguila
+25.03.2019,Aguilas,1,,Bucaramanga,1,,Liga Aguila
+25.03.2019,Patriotas,3,,La Equidad,1,,Liga Aguila
+24.03.2019,Santa Fe,0,,Once Caldas,2,,Liga Aguila
+24.03.2019,America De Cali,1,,Jaguares de Cordoba,0,,Liga Aguila
+24.03.2019,Junior,3,,Huila,0,,Liga Aguila
+24.03.2019,Ind. Medellin,4,,Envigado,1,,Liga Aguila
+23.03.2019,Deportes Tolima,1,,U. Magdalena,0,,Liga Aguila
+23.03.2019,Petrolera,1,,Dep. Cali,0,,Liga Aguila
+23.03.2019,Cucuta,1,,Atl. Nacional,3,,Liga Aguila
+23.03.2019,Dep. Pasto,1,,Millonarios,0,,Liga Aguila
+20.03.2019,Atl. Nacional,2,,Dep. Cali,2,,Liga Aguila
+17.03.2019,Bucaramanga,1,,Cucuta,0,,Liga Aguila
+17.03.2019,Jaguares de Cordoba,0,,Petrolera,0,,Liga Aguila
+17.03.2019,Huila,1,,Deportes Tolima,5,,Liga Aguila
+17.03.2019,U. Magdalena,1,,Junior,1,,Liga Aguila
+17.03.2019,Once Caldas,0,,Dep. Pasto,1,,Liga Aguila
+16.03.2019,Envigado,1,,Aguilas,1,,Liga Aguila
+16.03.2019,La Equidad,2,,Patriotas,2,,Liga Aguila
+16.03.2019,Dep. Cali,0,,America De Cali,1,,Liga Aguila
+16.03.2019,Ind. Medellin,2,,Atl. Nacional,2,,Liga Aguila
+10.03.2019,America De Cali,3,,Once Caldas,1,,Liga Aguila
+10.03.2019,Cucuta,3,,U. Magdalena,1,,Liga Aguila
+10.03.2019,Aguilas,1,,Envigado,3,,Liga Aguila
+10.03.2019,Ind. Medellin,1,,Santa Fe,0,,Liga Aguila
+10.03.2019,Patriotas,2,,Jaguares de Cordoba,1,,Liga Aguila
+10.03.2019,Dep. Pasto,1,,Dep. Cali,0,,Liga Aguila
+09.03.2019,Junior,0,,Bucaramanga,0,,Liga Aguila
+09.03.2019,Petrolera,2,,La Equidad,0,,Liga Aguila
+09.03.2019,Millonarios,1,,Atl. Nacional,1,,Liga Aguila
+08.03.2019,Deportes Tolima,0,,Huila,0,,Liga Aguila
+07.03.2019,Patriotas,0,,Dep. Cali,3,,Liga Aguila
+04.03.2019,Huila,1,,Petrolera,2,,Liga Aguila
+03.03.2019,Envigado,4,,America De Cali,1,,Liga Aguila
+03.03.2019,Dep. Cali,1,,Millonarios,1,,Liga Aguila
+03.03.2019,U. Magdalena,1,,Dep. Pasto,0,,Liga Aguila
+03.03.2019,Santa Fe,2,,Aguilas,2,,Liga Aguila
+02.03.2019,La Equidad,2,,Cucuta,1,,Liga Aguila
+02.03.2019,Jaguares de Cordoba,0,,Deportes Tolima,4,,Liga Aguila
+02.03.2019,Once Caldas,0,,Junior,1,,Liga Aguila
+02.03.2019,Bucaramanga,0,,Patriotas,1,,Liga Aguila
+28.02.2019,Millonarios,4,,U. Magdalena,0,,Liga Aguila
+28.02.2019,America De Cali,0,,Santa Fe,0,,Liga Aguila
+28.02.2019,Aguilas,0,,Ind. Medellin,1,,Liga Aguila
+27.02.2019,Junior,0,,Envigado,0,,Liga Aguila
+27.02.2019,Deportes Tolima,0,,Bucaramanga,0,,Liga Aguila
+27.02.2019,Patriotas,1,,Once Caldas,0,,Liga Aguila
+27.02.2019,Dep. Pasto,0,,La Equidad,0,,Liga Aguila
+26.02.2019,Cucuta,2,,Huila,0,,Liga Aguila
+26.02.2019,Petrolera,1,,Jaguares de Cordoba,1,,Liga Aguila
+24.02.2019,Santa Fe,3,,Junior,3,,Liga Aguila
+24.02.2019,Once Caldas,2,,Deportes Tolima,1,,Liga Aguila
+24.02.2019,Ind. Medellin,1,,Dep. Cali,1,,Liga Aguila
+24.02.2019,U. Magdalena,1,,Atl. Nacional,0,,Liga Aguila
+23.02.2019,Aguilas,1,,America De Cali,2,,Liga Aguila
+23.02.2019,Bucaramanga,3,,Petrolera,0,,Liga Aguila
+23.02.2019,La Equidad,0,,Millonarios,1,,Liga Aguila
+23.02.2019,Jaguares de Cordoba,1,,Cucuta,1,,Liga Aguila
+23.02.2019,Envigado,0,,Patriotas,0,,Liga Aguila
+22.02.2019,Huila,2,,Dep. Pasto,0,,Liga Aguila
+20.02.2019,Deportes Tolima,1,,Junior,2,,Liga Aguila
+19.02.2019,Dep. Cali,2,,U. Magdalena,1,,Liga Aguila
+17.02.2019,Atl. Nacional,1,,La Equidad,1,,Liga Aguila
+17.02.2019,Patriotas,1,,Santa Fe,1,,Liga Aguila
+17.02.2019,Cucuta,3,,Bucaramanga,2,,Liga Aguila
+17.02.2019,Deportes Tolima,2,,Envigado,0,,Liga Aguila
+17.02.2019,Dep. Pasto,4,,Jaguares de Cordoba,1,,Liga Aguila
+16.02.2019,Junior,1,,Aguilas,1,,Liga Aguila
+16.02.2019,Petrolera,1,,Once Caldas,1,,Liga Aguila
+16.02.2019,America De Cali,3,,Ind. Medellin,0,,Liga Aguila
+16.02.2019,Millonarios,3,,Huila,2,,Liga Aguila
+14.02.2019,Dep. Cali,2,,Deportes Tolima,1,,Liga Aguila
+11.02.2019,Once Caldas,1,,Cucuta,2,,Liga Aguila
+10.02.2019,America De Cali,0,,Junior,1,,Liga Aguila
+10.02.2019,Aguilas,2,,Patriotas,1,,Liga Aguila
+10.02.2019,Huila,1,,Atl. Nacional,1,,Liga Aguila
+10.02.2019,La Equidad,0,,Dep. Cali,0,,Liga Aguila
+09.02.2019,Ind. Medellin,1,,U. Magdalena,1,,Liga Aguila
+09.02.2019,Envigado,1,,Petrolera,0,,Liga Aguila
+09.02.2019,Santa Fe,0,,Deportes Tolima,1,,Liga Aguila
+09.02.2019,Jaguares de Cordoba,1,,Millonarios,2,,Liga Aguila
+08.02.2019,Bucaramanga,1,,Dep. Pasto,0,,Liga Aguila
+05.02.2019,Petrolera,0,,Santa Fe,0,,Liga Aguila
+04.02.2019,Deportes Tolima,2,,Aguilas,0,,Liga Aguila
+03.02.2019,Millonarios,2,,Bucaramanga,0,,Liga Aguila
+03.02.2019,Patriotas,1,,America De Cali,1,,Liga Aguila
+03.02.2019,Cucuta,1,,Envigado,1,,Liga Aguila
+03.02.2019,Dep. Pasto,1,,Once Caldas,2,,Liga Aguila
+02.02.2019,Atl. Nacional,1,,Jaguares de Cordoba,0,,Liga Aguila
+02.02.2019,Junior,3,,Ind. Medellin,2,,Liga Aguila
+02.02.2019,Dep. Cali,1,,Huila,1,,Liga Aguila
+02.02.2019,U. Magdalena,1,,La Equidad,0,,Liga Aguila
+31.01.2019,America De Cali,3,,Deportes Tolima,1,,Liga Aguila
+31.01.2019,Once Caldas,1,,Millonarios,0,,Liga Aguila
+30.01.2019,Bucaramanga,0,,Atl. Nacional,1,,Liga Aguila
+30.01.2019,Junior,3,,Patriotas,1,,Liga Aguila
+30.01.2019,Aguilas,0,,Petrolera,1,,Liga Aguila
+30.01.2019,Jaguares de Cordoba,1,,Dep. Cali,0,,Liga Aguila
+30.01.2019,Santa Fe,1,,Cucuta,2,,Liga Aguila
+30.01.2019,Dep. Pasto,1,,Envigado,1,,Liga Aguila
+29.01.2019,Ind. Medellin,1,,La Equidad,1,,Liga Aguila
+29.01.2019,Huila,1,,U. Magdalena,1,,Liga Aguila
+27.01.2019,Envigado,0,,Millonarios,1,,Liga Aguila
+27.01.2019,Petrolera,1,,America De Cali,2,,Liga Aguila
+27.01.2019,Santa Fe,1,,Dep. Pasto,1,,Liga Aguila
+26.01.2019,Dep. Cali,2,,Bucaramanga,0,,Liga Aguila
+26.01.2019,Atl. Nacional,0,,Once Caldas,0,,Liga Aguila
+26.01.2019,Cucuta,3,,Aguilas,0,,Liga Aguila
+26.01.2019,U. Magdalena,3,,Jaguares de Cordoba,4,,Liga Aguila
+26.01.2019,La Equidad,2,,Huila,0,,Liga Aguila
+25.01.2019,Patriotas,2,,Ind. Medellin,1,,Liga Aguila
+29.08.2019,Dep. Cali,2,,Junior,1,,Copa Aguila
+29.08.2019,Atl. Nacional,0,,Deportes Tolima,1,,Copa Aguila
+29.08.2019,Dep. Pasto,4,,Pereira,0,,Copa Aguila
+28.08.2019,Once Caldas,2,,Ind. Medellin,3,,Copa Aguila
+15.08.2019,Santa Fe,2,,Atl. Nacional,0,,Copa Aguila
+15.08.2019,Bucaramanga,1,,Junior,2,,Copa Aguila
+14.08.2019,Millonarios,2,,Ind. Medellin,2,,Copa Aguila
+14.08.2019,America De Cali,0,,Once Caldas,0,,Copa Aguila
+14.08.2019,Pereira,1,,Aguilas,0,,Copa Aguila
+14.08.2019,Orsomarso,0,,Deportes Tolima,5,,Copa Aguila
+14.08.2019,Real San Andres,0,,Dep. Cali,1,,Copa Aguila
+14.08.2019,Dep. Pasto,3,2.0,La Equidad,1,1.0,Copa Aguila
+08.08.2019,Junior,2,,Bucaramanga,0,,Copa Aguila
+07.08.2019,Ind. Medellin,2,,Millonarios,1,,Copa Aguila
+07.08.2019,Deportes Tolima,3,,Orsomarso,0,,Copa Aguila
+31.07.2019,Dep. Cali,1,,Real San Andres,0,,Copa Aguila
+31.07.2019,La Equidad,3,,Dep. Pasto,2,,Copa Aguila
+31.07.2019,Once Caldas,2,,America De Cali,1,,Copa Aguila
+31.07.2019,Aguilas,1,,Pereira,1,,Copa Aguila
+24.07.2019,Atl. Nacional,3,,Santa Fe,0,,Copa Aguila
+08.05.2019,Millonarios,2,,Tigres,0,,Copa Aguila
+08.05.2019,Barranquilla,2,,Cartagena,2,,Copa Aguila
+08.05.2019,Boca Juniors,1,,America De Cali,2,,Copa Aguila
+08.05.2019,Bogota,1,,Chico,0,,Copa Aguila
+08.05.2019,Cortulua,1,,Huila,1,,Copa Aguila
+08.05.2019,Cucuta,1,,Valledupar,1,,Copa Aguila
+08.05.2019,Dep. Pasto,2,,Atletico F.C.,0,,Copa Aguila
+08.05.2019,Jaguares de Cordoba,2,,Envigado,2,,Copa Aguila
+08.05.2019,Leones,2,,Pereira,4,,Copa Aguila
+08.05.2019,Orsomarso,3,,Quindio,1,,Copa Aguila
+08.05.2019,Patriotas,1,,Santa Fe,3,,Copa Aguila
+08.05.2019,Petrolera,0,,Bucaramanga,1,,Copa Aguila
+08.05.2019,U. Magdalena,3,,Real San Andres,4,,Copa Aguila
+08.05.2019,Llaneros,1,,Fortaleza,0,,Copa Aguila
+25.04.2019,Bucaramanga,2,,Cucuta,2,,Copa Aguila
+25.04.2019,Tigres,1,,Millonarios,3,,Copa Aguila
+25.04.2019,Huila,1,,Orsomarso,1,,Copa Aguila
+25.04.2019,Real San Andres,3,,Barranquilla,1,,Copa Aguila
+25.04.2019,Atletico F.C.,1,,Boca Juniors,1,,Copa Aguila
+25.04.2019,Quindio,1,,Cortulua,1,,Copa Aguila
+24.04.2019,Chico,2,,Bogota,1,,Copa Aguila
+24.04.2019,Santa Fe,1,,Patriotas,1,,Copa Aguila
+24.04.2019,America De Cali,1,,Dep. Pasto,1,,Copa Aguila
+24.04.2019,Envigado,1,,Leones,1,,Copa Aguila
+24.04.2019,Cartagena,0,,U. Magdalena,0,,Copa Aguila
+24.04.2019,Pereira,5,,Jaguares de Cordoba,1,,Copa Aguila
+24.04.2019,Valledupar,1,,Petrolera,1,,Copa Aguila
+24.04.2019,Fortaleza,1,,Llaneros,1,,Copa Aguila
+11.04.2019,Millonarios,1,,Llaneros,1,,Copa Aguila
+11.04.2019,Atletico F.C.,0,,America De Cali,1,,Copa Aguila
+11.04.2019,Huila,1,,Quindio,0,,Copa Aguila
+11.04.2019,Pereira,3,,Envigado,1,,Copa Aguila
+10.04.2019,Cortulua,2,,Orsomarso,0,,Copa Aguila
+10.04.2019,Santa Fe,1,,Chico,1,,Copa Aguila
+10.04.2019,Patriotas,1,,Bogota,0,,Copa Aguila
+10.04.2019,Petrolera,2,,Valledupar,0,,Copa Aguila
+10.04.2019,Cucuta,0,,Bucaramanga,0,,Copa Aguila
+10.04.2019,U. Magdalena,1,,Cartagena,1,,Copa Aguila
+10.04.2019,Barranquilla,1,,Real San Andres,0,,Copa Aguila
+10.04.2019,Dep. Pasto,1,,Boca Juniors,0,,Copa Aguila
+10.04.2019,Leones,1,,Jaguares de Cordoba,0,,Copa Aguila
+10.04.2019,Tigres,2,,Fortaleza,1,,Copa Aguila
+03.04.2019,Real San Andres,3,,U. Magdalena,3,,Copa Aguila
+21.03.2019,America De Cali,1,,Atletico F.C.,0,,Copa Aguila
+21.03.2019,Orsomarso,3,,Cortulua,1,,Copa Aguila
+21.03.2019,Quindio,1,,Huila,3,,Copa Aguila
+21.03.2019,Envigado,0,,Pereira,0,,Copa Aguila
+21.03.2019,Fortaleza,1,,Tigres,1,,Copa Aguila
+20.03.2019,Bucaramanga,5,,Valledupar,1,,Copa Aguila
+20.03.2019,Chico,2,,Santa Fe,2,,Copa Aguila
+20.03.2019,Petrolera,1,,Cucuta,1,,Copa Aguila
+20.03.2019,Cartagena,1,,Real San Andres,0,,Copa Aguila
+20.03.2019,Jaguares de Cordoba,1,,Leones,3,,Copa Aguila
+20.03.2019,Barranquilla,0,,U. Magdalena,1,,Copa Aguila
+20.03.2019,Boca Juniors,2,,Dep. Pasto,3,,Copa Aguila
+20.03.2019,Llaneros,1,,Millonarios,2,,Copa Aguila
+20.03.2019,Bogota,0,,Patriotas,3,,Copa Aguila
+14.03.2019,Cucuta,2,,Petrolera,1,,Copa Aguila
+14.03.2019,Bogota,2,,Santa Fe,2,,Copa Aguila
+14.03.2019,Jaguares de Cordoba,2,,Pereira,2,,Copa Aguila
+13.03.2019,Cortulua,0,,Quindio,1,,Copa Aguila
+13.03.2019,Patriotas,0,,Chico,0,,Copa Aguila
+13.03.2019,Valledupar,0,,Bucaramanga,0,,Copa Aguila
+13.03.2019,Real San Andres,1,,Cartagena,0,,Copa Aguila
+13.03.2019,U. Magdalena,1,,Barranquilla,0,,Copa Aguila
+13.03.2019,Dep. Pasto,0,,America De Cali,2,,Copa Aguila
+13.03.2019,Fortaleza,0,,Millonarios,1,,Copa Aguila
+13.03.2019,Leones,0,,Envigado,0,,Copa Aguila
+13.03.2019,Orsomarso,3,,Huila,0,,Copa Aguila
+13.03.2019,Boca Juniors,2,,Atletico F.C.,2,,Copa Aguila
+13.03.2019,Tigres,0,,Llaneros,0,,Copa Aguila
+14.02.2019,Santa Fe,1,,Bogota,0,,Copa Aguila
+14.02.2019,Valledupar,3,,Cucuta,3,,Copa Aguila
+14.02.2019,Atletico F.C.,1,,Dep. Pasto,2,,Copa Aguila
+14.02.2019,Pereira,2,,Leones,1,,Copa Aguila
+13.02.2019,Bucaramanga,1,,Petrolera,2,,Copa Aguila
+13.02.2019,Chico,1,,Patriotas,1,,Copa Aguila
+13.02.2019,Millonarios,1,,Fortaleza,0,,Copa Aguila
+13.02.2019,America De Cali,1,,Boca Juniors,0,,Copa Aguila
+13.02.2019,Quindio,0,,Orsomarso,1,,Copa Aguila
+13.02.2019,Huila,1,,Cortulua,0,,Copa Aguila
+13.02.2019,Envigado,1,,Jaguares de Cordoba,1,,Copa Aguila
+13.02.2019,Cartagena,4,,Barranquilla,0,,Copa Aguila
+13.02.2019,Llaneros,0,,Tigres,1,,Copa Aguila
+27.01.2019,Deportes Tolima,0,0.0,Junior,2,1.0,Super Cup
+23.01.2019,Junior,1,,Deportes Tolima,2,,Super Cup
