@@ -1,9 +1,0 @@
-"0","clubes = data.frame(Clube = unique(c(partidas$club_1, partidas$club_2)), Elo = 1500) %>%"
-"0","  inner_join(clubes_paises) %>%"
-"0","  distinct(Clube, .keep_all = TRUE) %>% # EXISTEM CLUBES DE PAISES DIFERENTES, BOCA JUNIORS DA COLOMBIA POR EXEMPLO"
-"0","  mutate(Clube = as.factor(Clube))"
-"2","Joining, by = ""Clube""
-"
-"2","`chr_along()` is deprecated as of rlang 0.2.0.
-[90mThis warning is displayed once per session.[39m"
-"2","Column `Clube` joining factor and character vector, coercing into character vector"

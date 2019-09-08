@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1567878117115.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "200|30|206|2|\n208|30|214|2|\n218|32|278|4|\n",
+    "hash" : "0",
+    "id" : "F78A26EA",
+    "lastKnownWriteTime" : 1567906036,
+    "last_content_update" : 1567906036107,
+    "path" : "~/GitHub/FDS-Final-Project/app.R",
+    "project_path" : "app.R",
+    "properties" : {
+        "cursorPosition" : "299,81",
+        "scrollLine" : "285"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

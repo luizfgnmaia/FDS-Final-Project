@@ -1,5 +1,0 @@
-"0","tercas = getNthDayOfWeek(first, Tue, 1, 2002)
-"
-"2","Error in getNthDayOfWeek(first, Tue, 1, 2002) : 
-  could not find function ""getNthDayOfWeek""
-"

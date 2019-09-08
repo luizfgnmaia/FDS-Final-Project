@@ -1,5 +1,0 @@
-"0","clubes_continentais = tibble(Clube = c(partidas$club_1, partidas$club_2),"
-"0","                       Pais = c(partidas$file, partidas$file)) %>%"
-"0","  distinct(Clube, Pais) %>%"
-"0","  filter(Pais == ""Continentais"") %>%"
-"0","  arrange(Clube)"

@@ -1,0 +1,3 @@
+hoverinfo = paste0("Origem: %{x}<br>",
+                   "Adversário: %{y}<br>",
+                   "Aproveitamento: %{z:.4f}"))

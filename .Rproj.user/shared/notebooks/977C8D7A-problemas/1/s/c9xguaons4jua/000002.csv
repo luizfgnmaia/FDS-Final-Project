@@ -1,3 +1,0 @@
-"0","clubes_paises %>%"
-"0","  count(Clube) %>%"
-"0","  arrange(desc(n))"
