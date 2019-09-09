@@ -1,11 +1,10 @@
 options(encoding = "UTF-8")
+options(OutDec = ",")
 
 library(dplyr)
 library(stringr)
 
 source("aux_shiny.R")
-
-options(OutDec = ",")
 
 dados = read.csv("data/rankings/ranktodos.csv", stringsAsFactors = FALSE) %>%
   select(-X) %>%
@@ -301,7 +300,8 @@ for(i in 1:length(files)) {
   
   tmp = tibble(Confederacao = c(conf[i], conf[i], conf[i]),
                Vencedor = c("Mandante", "Empate", "Visitante"),
-               Freq = c(mandante/n, empate/n, visitante/n))
+               Freq = c(100*mandante/n, 100*empate/n, 100*visitante/n),
+               n = c(mandante, empate, visitante))
   
   df_mandante = df_mandante %>%
     rbind(tmp)
@@ -319,17 +319,42 @@ ordem_vencedor = c("Mandante", "Empate", "Visitante")
 df_mandante = df_mandante %>%
   mutate(Confederacao = factor(Confederacao, levels = ordem_conf),
          Vencedor = factor(Vencedor, levels = ordem_vencedor),
-         text = paste0(str_replace_all(round(Freq, 4), "\\.", ",")))
-                                
+         text = paste0(n, " (", round(Freq, 2), "%)"))
+
+total = max(df_partidas$Partidas)
+  
 df_partidas = df_partidas %>%
   mutate(Confederacao = factor(Confederacao, levels = ordem_conf),
-         text = Partidas)
+         porc = round(100*Partidas/total, 2),
+         text = paste0(Partidas, " (", porc, "%)"))
 #################################################################################
 
+# Placares mais comuns
+#################################################################################
 
+tmp = read.csv("data/jogosid.csv") %>%
+  mutate(Placar = paste(g1, "x", g2)) %>%
+  count(Placar) %>%
+  arrange(desc(n))
+
+placares = tmp %>%
+  head(20)
+
+outros = sum(tmp$n) - sum(placares$n)
+
+total = sum(tmp$n)
+
+placares = placares %>%
+  rbind(data.frame(Placar = "Outros", n = outros)) %>%
+  mutate(Placar = factor(Placar, levels = Placar),
+         porc = round(100*n/total, 2),
+         text = paste0(n, " (", porc, "%)"))
+
+#################################################################################
       
 rm(list = setdiff(ls(), c("dados", "clubes", "paises", "datas", "len_datas", 
                           "melhores_clubes", "maiores_streaks", "tabela_dados", 
-                          "df_confrontos", "df_mandante", "df_partidas")))
+                          "df_confrontos", "df_mandante", "df_partidas",
+                          "placares")))
 
 save.image("pre_shiny.RData")

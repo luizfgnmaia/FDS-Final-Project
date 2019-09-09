@@ -21,9 +21,6 @@ flags_df = tibble(Pais = c("Argentina", "Bolívia", "Brasil", "Chile", "Colômbi
                            '<img src="https://flagpedia.net/data/flags/mini/ve.png" width="29" height="20" /></a>',
                            '<img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a8/CONMEBOL_logo_%282017%29.svg/278px-CONMEBOL_logo_%282017%29.svg.png" width="29" height="20" /></a>'))
 
-
-line_size = 0.75
-
 #################################################################################
 
 sidebar <- dashboardSidebar(
@@ -35,11 +32,14 @@ sidebar <- dashboardSidebar(
              menuSubItem("Fonte dos dados", tabName = "fonte"),
              menuSubItem("Tratamento na base", tabName = "tratamento")),
     menuItem("Análise exploratória", icon = icon("chart-bar"), tabName = "eda",
-             menuSubItem("Partidas", tabName = "partidas"),
-             menuSubItem("Confrontos internacionais", tabName = "confrontos"),
+             menuSubItem("Partidas por confederação", tabName = "partidas"),
+             menuSubItem("Placares mais comuns", tabName = "placares"),
+             menuSubItem("Mando de campo", tabName = "mando"),
+             menuSubItem("Confrontos internacionais", tabName = "confrontos")),
+    menuItem("Modelagem", icon = icon("question"), tabName = "model"),
+    menuItem("Resultados", icon = icon("poll-h"), tabName = "result",
              menuSubItem("Melhores clubes", tabName = "melhores_clubes"),
              menuSubItem("Mais tempo na liderança", tabName = "tempo_lideranca")),
-    menuItem("Modelagem", icon = icon("question"), tabName = "model"),
     menuItem("Próximos passos", icon = icon("forward"), tabName = "next"),
     menuItem("Github", icon = icon("github"), href = "https://github.com/luizfgnmaia/FDS-Final-Project")
   )
@@ -54,7 +54,7 @@ body <- dashboardBody(
     #################################################################################
 
     tabItem(tabName = "int",
-            HTML('<iframe width="1200" height="600" src="https://www.youtube.com/embed/AREB7MCGaUY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'),
+            HTML('<iframe width="900" height="600" src="https://www.youtube.com/embed/AREB7MCGaUY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'),
             h2("Introdução"),
             HTML("<p>Uma vez Flamengo, sempre Flamengo</p>
                  <p>Flamengo sempre eu hei de ser</p>
@@ -110,27 +110,25 @@ body <- dashboardBody(
     
     #################################################################################
     
-    # Análise exploratória
+    # Análise exploratória 
     #################################################################################
     
     tabItem(tabName = "partidas",
             h2("Quantidade de partidas por confederação"),
-            plotlyOutput("eda_partidas"),
+            plotlyOutput("partidas")),
+    
+    tabItem(tabName = "placares",
+            h2("Placares mais comuns"),
+            plotlyOutput("placares")),
+    
+    tabItem(tabName = "mando",
             h2("Influência do mando de campo por confederação"),
-            plotlyOutput("eda_mando")),
+            plotlyOutput("mando")),
     
     tabItem(tabName = "confrontos",
             h2("Aproveitamento nos confrontos internacionais"),
             HTML('A entrada <b>(i,j)</b> desta matriz representa o aproveitamento dos clubes do país <b>i</b>  contra adversários do país <b>j</b>.'),
-            plotlyOutput("eda_confrontos")),
-    
-    tabItem(tabName = "melhores_clubes",
-            h2("Melhores clubes considerando a pontuação Elo"),
-            tableOutput("eda_melhores_clubes")),
-    
-    tabItem(tabName = "tempo_lideranca",
-            h2("Clubes que permaneceram mais meses no primeiro lugar do ranking"),
-            tableOutput("eda_tempo_lideranca")),
+            plotlyOutput("confrontos")),
     
     #################################################################################
     
@@ -143,13 +141,10 @@ body <- dashboardBody(
                  utilizando o pacote <a href="https://pypi.org/project/selenium/">Selenium</a> do Python.'),
             h2("Base de dados"),
             HTML('A base de dados utilizado para a construção do ranking é composta pelos resultados das seguintes competições:'),
-            tableOutput("dados_competicoes")
+            tableOutput("competicoes")
             ),
     
     tabItem(tabName = "tratamento"),
-    
-    
-    
     
     #################################################################################
     
@@ -159,6 +154,17 @@ body <- dashboardBody(
     tabItem(tabName = "model"),
     
     #################################################################################
+    
+    # Resultados
+    #################################################################################
+    
+    tabItem(tabName = "melhores_clubes",
+            h2("Melhores clubes considerando a pontuação Elo"),
+            tableOutput("melhores_clubes")),
+    
+    tabItem(tabName = "tempo_lideranca",
+            h2("Clubes que permaneceram mais meses no primeiro lugar do ranking"),
+            tableOutput("tempo_lideranca")),
     
     # Próximos passos
     #################################################################################
@@ -184,14 +190,16 @@ server <- function(input, output) {
     
     p = dados %>%
       filter(Clube %in% input$hist_clube) %>%
-      mutate(Mes = paste0("Mês: ", format(Data, "%b %Y"))) %>%
-      ggplot(aes(x = Data, y = Elo, group = 1, text = Mes)) + # https://stackoverflow.com/questions/45948926/ggplotly-text-aesthetic-causing-geom-line-to-not-display
-      geom_line(aes(color = Clube), size = line_size) +
+      mutate(text = paste0("Clube: ", Clube, "<br>", 
+                           "Mês: ", str_to_lower(format(Data, "%b %Y")), "<br>",
+                           "Elo: ", round(Elo, 2))) %>%
+      ggplot(aes(x = Data, y = Elo, group = 1, text = text)) + # https://stackoverflow.com/questions/45948926/ggplotly-text-aesthetic-causing-geom-line-to-not-display
+      geom_line(aes(color = Clube), size = 0.75) +
       tema +
       xlab("")
     
     p %>%
-      ggplotly(tooltip = c("Clube", "Mes", "Elo")) %>% 
+      ggplotly(tooltip = c("text")) %>% 
       layout(plot_bgcolor = 'rgba(0, 0, 0, 0)', # https://community.plot.ly/t/create-plots-with-transparent-background/14658
              paper_bgcolor = 'rgba(0, 0, 0, 0)')
     
@@ -283,23 +291,23 @@ server <- function(input, output) {
   }, rownames = TRUE, striped = TRUE, hover = TRUE, width = 700,
   sanitize.text.function = function(x) x) # https://www.oipapio.com/question-8798651
   
-  output$eda_melhores_clubes <- renderTable(melhores_clubes, rownames = TRUE, 
+  output$melhores_clubes <- renderTable(melhores_clubes, rownames = TRUE, 
                                         striped = TRUE, hover = TRUE, width = 700,
                                         sanitize.text.function = function(x) x)
   
-  output$eda_tempo_lideranca <- renderTable(maiores_streaks %>%
+  output$tempo_lideranca <- renderTable(maiores_streaks %>%
                                                 rename(Até = Ate), 
                                               rownames = TRUE, 
                                               striped = TRUE, hover = TRUE, width = 700,
                                               sanitize.text.function = function(x) x,
                                               na = " ")
   
-  output$dados_competicoes <- renderTable(tabela_dados %>%
+  output$competicoes <- renderTable(tabela_dados %>%
                                             rename(Competição = Competicao),
                                           striped = TRUE, hover = TRUE, width = 700,
                                           sanitize.text.function = function(x) x)
   
-  output$eda_confrontos <- renderPlotly({
+  output$confrontos <- renderPlotly({
     
     plot_ly(x = df_confrontos$Origem, y = df_confrontos$Adversario, z = df_confrontos$Aproveitamento, type = "heatmap", colorscale = "RdBu",
             reversescale = TRUE, hoverinfo = "none") %>%
@@ -312,7 +320,7 @@ server <- function(input, output) {
     
     })
   
-  output$eda_partidas <- renderPlotly({
+  output$partidas <- renderPlotly({
     p = df_partidas %>%
       rename(Confederação = Confederacao) %>%
       ggplot(aes(x = Confederação, y = Partidas, text = text)) +
@@ -327,7 +335,7 @@ server <- function(input, output) {
              paper_bgcolor = 'rgba(0, 0, 0, 0)')
   })
   
-  output$eda_mando <- renderPlotly({
+  output$mando <- renderPlotly({
     
     p = df_mandante %>%
       ggplot(aes(x = Confederacao, y = Freq, fill = Vencedor, text = text)) +
@@ -341,6 +349,21 @@ server <- function(input, output) {
       layout(plot_bgcolor = 'rgba(0, 0, 0, 0)',
              paper_bgcolor = 'rgba(0, 0, 0, 0)')
   })
+  
+  output$placares <- renderPlotly({
+    p = placares %>%
+      ggplot(aes(x = Placar, y = n, text = text)) +
+      geom_bar(stat = "identity", position = "dodge", fill = "#F8766D") +
+      tema +
+      xlab("") +
+      ylab("Quantidade")
+    
+    p %>%
+      ggplotly(tooltip = c("text")) %>%
+      layout(plot_bgcolor = 'rgba(0, 0, 0, 0)',
+             paper_bgcolor = 'rgba(0, 0, 0, 0)')
+  })
+  
   #output$debug = renderText(input$rank_pais)
 }
 

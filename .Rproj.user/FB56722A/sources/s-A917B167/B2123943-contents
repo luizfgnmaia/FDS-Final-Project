@@ -1,9 +1,0 @@
-
-df_mandante %>%
-  ggplot(aes(x = Confederacao, y = Freq, fill = Vencedor)) +
-  geom_bar(stat = "identity", position = "dodge")
-
-
-df_partidas %>%
-  ggplot(aes(x = Confederacao, y = Partidas)) +
-  geom_bar(stat = "identity", position = "dodge")

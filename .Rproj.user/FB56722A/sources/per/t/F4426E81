@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1567878123681.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "54|82|66|0|\n71|82|111|0|\n",
+    "hash" : "2053754333",
+    "id" : "F4426E81",
+    "lastKnownWriteTime" : 1567986103,
+    "last_content_update" : 1567986103333,
+    "path" : "~/GitHub/FDS-Final-Project/pre_shiny.R",
+    "project_path" : "pre_shiny.R",
+    "properties" : {
+        "cursorPosition" : "336,19",
+        "scrollLine" : "335"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
