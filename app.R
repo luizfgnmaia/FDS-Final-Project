@@ -150,7 +150,7 @@ body <- dashboardBody(
             tableOutput("maiores_pontuacoes")),
     
     tabItem(tabName = "tempo_lideranca",
-            h2("Clubes que permaneceram mais meses no primeiro lugar do ranking"),
+            h2("Clubes que permaneceram mais meses consecutivos no primeiro lugar do ranking"),
             tableOutput("tempo_lideranca")),
     
     # Próximos passos
@@ -354,8 +354,8 @@ server <- function(input, output) {
   
   output$plot_confrontos <- renderPlotly({
     p = confrontos %>%
-      mutate(País = Pais) %>%
-      ggplot(aes(x = Pais, y = Aproveitamento, text = text)) +
+      rename(País = Pais) %>%
+      ggplot(aes(x = País, y = Aproveitamento, text = text)) +
       geom_bar(stat = "identity", position = "dodge", fill = "#F8766D") +
       tema +
       xlab("") +
