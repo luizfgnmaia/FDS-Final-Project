@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1568242315736.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3955183177",
+    "id" : "B48D787A",
+    "lastKnownWriteTime" : 1567900074,
+    "last_content_update" : 1567900074,
+    "path" : "~/GitHub/FDS-Final-Project/aux_shiny.R",
+    "project_path" : "aux_shiny.R",
+    "properties" : {
+        "cursorPosition" : "62,0",
+        "scrollLine" : "50",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

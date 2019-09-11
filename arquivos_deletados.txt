@@ -13,3 +13,9 @@ get_hrefs.py
 scrape.ipynb
 scrape_test.ipynb
 update_scrape.ipynb
+
+
+
+
+https://docs.anaconda.com/anaconda/navigator/tutorials/r-lang/
+colocar readme tb

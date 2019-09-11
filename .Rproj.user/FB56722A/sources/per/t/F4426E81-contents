@@ -54,7 +54,7 @@ len_datas = length(datas)
 # Times com maiores elos na história
 ################################################################################# 
 
-melhores_clubes = dados %>%
+maiores_pontuacoes = dados %>%
   mutate(Ano = format(Data, "%Y")) %>%
   group_by(Clube, Pais, Ano) %>%
   summarise(Elo = max(Elo)) %>%
@@ -270,10 +270,82 @@ for(i in 1:10) {
 }
 
 df_confrontos = df_confrontos %>%
-  mutate(text = as.character(round(Aproveitamento, 2)) %>%
-           str_replace_all("\\.", ","))
+  mutate(Aproveitamento = 100*Aproveitamento,
+         text = paste0(as.character(round(Aproveitamento, 2)), "%"))
 
-df_confrontos$text[is.na(df_confrontos$text)] = ""
+df_confrontos$text[is.na(df_confrontos$Aproveitamento)] = ""
+
+vitorias = NULL
+empates = NULL
+partidas = NULL
+
+for(i in 1:length(paises)) {
+  
+  vit = 0
+  emp = 0
+  
+  tmp1 = sula %>%
+    filter(p1 == paises[i], p2 != paises[i])
+  
+  c1 = count(tmp1, resultado)
+  
+  n1 = nrow(tmp1)
+  
+  tmp_vit = c1 %>% 
+    filter(resultado == "vit") %>% 
+    .$n
+  
+  if(length(tmp_vit) > 0) {
+    vit = vit + tmp_vit
+  }
+  
+  tmp_emp = c1 %>% 
+    filter(resultado == "emp") %>% 
+    .$n
+  
+  if(length(tmp_emp) > 0) {
+    emp = emp + tmp_emp
+  }
+  
+  tmp2 = sula %>%
+    filter(p2 == paises[i], p1 != paises[i])
+  
+  c2 = count(tmp2, resultado)
+  
+  n2 = nrow(tmp2)
+  
+  tmp_vit = c2 %>% 
+    filter(resultado == "der") %>% 
+    .$n
+  
+  if(length(tmp_vit) > 0) {
+    vit = vit + tmp_vit
+  }
+  
+  tmp_emp = c2 %>% 
+    filter(resultado == "emp") %>% 
+    .$n
+  
+  if(length(tmp_emp) > 0) {
+    emp = emp + tmp_emp
+  }
+  
+  vitorias[i] = vit
+  empates[i] = emp
+  partidas[i] = n1 + n2
+  
+}
+
+confrontos = tibble(Pais = paises, Vitorias = vitorias, Empates = empates, Partidas = partidas) %>%
+  mutate(Aproveitamento = 100*(2*Vitorias + Empates) / (Partidas*2),
+         text = paste0("País: ", Pais, "<br>",
+                       "Aproveitamento: ", round(Aproveitamento, 2), "%<br>",
+                       "Vitórias: ", Vitorias, "<br>",
+                       "Empates: ", Empates, "<br>",
+                       "Partidas: ", Partidas, "<br>")) %>%
+  arrange(desc(Aproveitamento)) %>%
+  mutate(Pais = factor(Pais, levels = Pais))
+
 ################################################################################# 
  
 # Vantagem do mandante e partidas por confederação
@@ -351,10 +423,113 @@ placares = placares %>%
          text = paste0(n, " (", porc, "%)"))
 
 #################################################################################
+
+# Estatísticas
+#################################################################################
+
+jogos = read.csv("data/jogosid.csv") %>%
+  mutate(resultado = if_else(g1 > g2, "vit",
+                             if_else(g1 == g2, "emp", "der")))
+
+ids = unique(c(jogos$id1, jogos$id2))
+
+vitorias = NULL
+empates = NULL
+partidas = NULL
+gols_pro = NULL
+gols_contra = NULL
+
+for(i in 1:length(ids)) {
+  
+  vit = 0
+  emp = 0
+  g_pro = 0
+  g_contra = 0
+  
+  tmp1 = jogos %>%
+    filter(id1 == ids[i])
+  
+  c1 = count(tmp1, resultado)
+  
+  n1 = nrow(tmp1)
+  
+  tmp_vit = c1 %>% 
+    filter(resultado == "vit") %>% 
+    .$n
+  
+  if(length(tmp_vit) > 0) {
+    vit = vit + tmp_vit
+  }
+  
+  tmp_emp = c1 %>% 
+    filter(resultado == "emp") %>% 
+    .$n
+  
+  if(length(tmp_emp) > 0) {
+    emp = emp + tmp_emp
+  }
+  
+  g_pro = g_pro + sum(tmp1$g1)
+  g_contra = g_contra + sum(tmp1$g2)
+  
+  tmp2 = jogos %>%
+    filter(id2 == ids[i])
+  
+  c2 = count(tmp2, resultado)
+  
+  n2 = nrow(tmp2)
+  
+  tmp_vit = c2 %>% 
+    filter(resultado == "der") %>% 
+    .$n
+  
+  if(length(tmp_vit) > 0) {
+    vit = vit + tmp_vit
+  }
+  
+  tmp_emp = c2 %>% 
+    filter(resultado == "emp") %>% 
+    .$n
+  
+  if(length(tmp_emp) > 0) {
+    emp = emp + tmp_emp
+  }
+  
+  g_pro = g_pro + sum(tmp2$g2)
+  g_contra = g_contra + sum(tmp2$g1)
+  
+  vitorias[i] = vit
+  empates[i] = emp
+  partidas[i] = n1 + n2
+  gols_pro[i] = g_pro
+  gols_contra[i] = g_contra
+}
+
+tmp_dados = dados %>%
+  distinct(id, .keep_all = TRUE) %>%
+  select(id, Clube, Pais)
+
+estatisticas = tibble(id = ids, Vitorias = vitorias, Empates = empates, Partidas = partidas,
+                     GP = gols_pro, GC = gols_contra) %>%
+  inner_join(tmp_dados) %>%
+  inner_join(flags_df) %>%
+  mutate(Clube = paste(flag, Clube)) %>%
+  select(Clube, Partidas, Vitorias, Empates, GP, GC, Pais) %>%
+  mutate(SG = GP - GC,
+         Aproveitamento = round((2*Vitorias + Empates) / (Partidas*2), 4),
+         Partidas = as.integer(Partidas),
+         Vitorias = as.integer(Vitorias),
+         Empates = as.integer(Empates),
+         GP = as.integer(GP),
+         GC = as.integer(GC),
+         SG = as.integer(SG)) %>%
+  arrange(desc(Aproveitamento))
+  
+#################################################################################
       
 rm(list = setdiff(ls(), c("dados", "clubes", "paises", "datas", "len_datas", 
-                          "melhores_clubes", "maiores_streaks", "tabela_dados", 
+                          "maiores_pontuacoes", "maiores_streaks", "tabela_dados", 
                           "df_confrontos", "df_mandante", "df_partidas",
-                          "placares")))
+                          "placares", "confrontos", "estatisticas")))
 
 save.image("pre_shiny.RData")

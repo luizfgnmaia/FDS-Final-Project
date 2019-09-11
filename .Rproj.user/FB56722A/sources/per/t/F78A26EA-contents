@@ -26,8 +26,6 @@ flags_df = tibble(Pais = c("Argentina", "Bolívia", "Brasil", "Chile", "Colômbi
 sidebar <- dashboardSidebar(
   sidebarMenu(
     menuItem("Introdução", icon = icon("youtube"), tabName = "int"), 
-    menuItem("Rankings", icon = icon("trophy"), tabName = "rank"),
-    menuItem("Histórico", icon = icon("chart-line"), tabName = "hist"),
     menuItem("Dados", icon = icon("database"), tabName = "dados",
              menuSubItem("Fonte dos dados", tabName = "fonte"),
              menuSubItem("Tratamento na base", tabName = "tratamento")),
@@ -35,10 +33,13 @@ sidebar <- dashboardSidebar(
              menuSubItem("Partidas por confederação", tabName = "partidas"),
              menuSubItem("Placares mais comuns", tabName = "placares"),
              menuSubItem("Mando de campo", tabName = "mando"),
-             menuSubItem("Confrontos internacionais", tabName = "confrontos")),
+             menuSubItem("Confrontos internacionais", tabName = "confrontos"),
+             menuSubItem("Estatísticas dos clubes", tabName = "estatisticas")),
     menuItem("Modelagem", icon = icon("question"), tabName = "model"),
+    menuItem("Rankings", icon = icon("trophy"), tabName = "rank"),
+    menuItem("Histórico", icon = icon("chart-line"), tabName = "hist"),
     menuItem("Resultados", icon = icon("poll-h"), tabName = "result",
-             menuSubItem("Melhores clubes", tabName = "melhores_clubes"),
+             menuSubItem("Maiores pontuações", tabName = "maiores_pontuacoes"),
              menuSubItem("Mais tempo na liderança", tabName = "tempo_lideranca")),
     menuItem("Próximos passos", icon = icon("forward"), tabName = "next"),
     menuItem("Github", icon = icon("github"), href = "https://github.com/luizfgnmaia/FDS-Final-Project")
@@ -54,28 +55,8 @@ body <- dashboardBody(
     #################################################################################
 
     tabItem(tabName = "int",
-            HTML('<iframe width="900" height="600" src="https://www.youtube.com/embed/AREB7MCGaUY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'),
-            h2("Introdução"),
-            HTML("<p>Uma vez Flamengo, sempre Flamengo</p>
-                 <p>Flamengo sempre eu hei de ser</p>
-                 <p>É meu maior prazer vê-lo brilhar</p>
-                 <p>Seja na terra, seja no mar</p>
-                 <p>Vencer, vencer, vencer!</p>
-                 <p>Uma vez Flamengo, Flamengo até morrer!</p>
-                 
-                 <p>Na regata, ele me mata</p>
-                 <p>Me maltrata, me arrebata</p>
-                 <p>Que emoção no coração!</p>
-                 <p>Consagrado no gramado</p>
-                 <p>Sempre amado, o mais cotado</p>
-                 <p>Nos Fla-Flus é o Ai, Jesus!</p>
-                 
-                 <p>Eu teria um desgosto profundo</p>
-                 <p>Se faltasse o Flamengo no mundo</p>
-                 <p>Ele vibra, ele é fibra</p>
-                 <p>Muita libra já pesou</p>
-                 <p>Flamengo até morrer eu sou!</p>")
-            ),
+            HTML('<iframe width="600" height="400" src="https://www.youtube.com/embed/AREB7MCGaUY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'),
+            h2("Introdução")),
     
     #################################################################################
     
@@ -84,7 +65,6 @@ body <- dashboardBody(
     
     tabItem(tabName = "rank",
             h2("Ranking mensal geral ou por país"),
-            uiOutput("rank_ui"),
             mydateInput("rank_data", 
                         "Mês", 
                         format = "mm-yyyy", 
@@ -93,6 +73,7 @@ body <- dashboardBody(
                         min = datas[2],
                         max = datas[len_datas],
                         value = datas[len_datas]), 
+            uiOutput("rank_ui"),
             tableOutput("rank_table")
     ),
     
@@ -128,7 +109,13 @@ body <- dashboardBody(
     tabItem(tabName = "confrontos",
             h2("Aproveitamento nos confrontos internacionais"),
             HTML('A entrada <b>(i,j)</b> desta matriz representa o aproveitamento dos clubes do país <b>i</b>  contra adversários do país <b>j</b>.'),
-            plotlyOutput("confrontos")),
+            plotlyOutput("df_confrontos"),
+            plotlyOutput("plot_confrontos")),
+    
+    tabItem(tabName = "estatisticas",
+            h2("Estatísticas dos clubes"),
+            uiOutput("estatisticas_ui"),
+            dataTableOutput("estatisticas")),
     
     #################################################################################
     
@@ -158,12 +145,12 @@ body <- dashboardBody(
     # Resultados
     #################################################################################
     
-    tabItem(tabName = "melhores_clubes",
-            h2("Melhores clubes considerando a pontuação Elo"),
-            tableOutput("melhores_clubes")),
+    tabItem(tabName = "maiores_pontuacoes",
+            h2("Melhores pontuações da medida Elo"),
+            tableOutput("maiores_pontuacoes")),
     
     tabItem(tabName = "tempo_lideranca",
-            h2("Clubes que permaneceram mais meses no primeiro lugar do ranking"),
+            h2("Clubes que permaneceram mais meses consecutivos no primeiro lugar do ranking"),
             tableOutput("tempo_lideranca")),
     
     # Próximos passos
@@ -177,7 +164,7 @@ body <- dashboardBody(
     )
 
 ui <- dashboardPage(skin = "red",
-                    dashboardHeader(title = "Elo da paz"),
+                    dashboardHeader(title = ""),
                     sidebar,
                     body
 )
@@ -291,7 +278,7 @@ server <- function(input, output) {
   }, rownames = TRUE, striped = TRUE, hover = TRUE, width = 700,
   sanitize.text.function = function(x) x) # https://www.oipapio.com/question-8798651
   
-  output$melhores_clubes <- renderTable(melhores_clubes, rownames = TRUE, 
+  output$maiores_pontuacoes <- renderTable(maiores_pontuacoes, rownames = TRUE, 
                                         striped = TRUE, hover = TRUE, width = 700,
                                         sanitize.text.function = function(x) x)
   
@@ -307,7 +294,7 @@ server <- function(input, output) {
                                           striped = TRUE, hover = TRUE, width = 700,
                                           sanitize.text.function = function(x) x)
   
-  output$confrontos <- renderPlotly({
+  output$df_confrontos <- renderPlotly({
     
     plot_ly(x = df_confrontos$Origem, y = df_confrontos$Adversario, z = df_confrontos$Aproveitamento, type = "heatmap", colorscale = "RdBu",
             reversescale = TRUE, hoverinfo = "none") %>%
@@ -342,7 +329,8 @@ server <- function(input, output) {
       geom_bar(stat = "identity", position = "dodge") +
       tema +
       xlab("") +
-      ylab("Resultado (%)")
+      ylab("Resultado (%)") +
+      scale_y_continuous(breaks = c(10, 20, 30, 40, 50))
 
     p %>%
       ggplotly(tooltip = c("text")) %>%
@@ -363,6 +351,64 @@ server <- function(input, output) {
       layout(plot_bgcolor = 'rgba(0, 0, 0, 0)',
              paper_bgcolor = 'rgba(0, 0, 0, 0)')
   })
+  
+  output$plot_confrontos <- renderPlotly({
+    p = confrontos %>%
+      rename(País = Pais) %>%
+      ggplot(aes(x = País, y = Aproveitamento, text = text)) +
+      geom_bar(stat = "identity", position = "dodge", fill = "#F8766D") +
+      tema +
+      xlab("") +
+      ylab("Aproveitamento (%)")
+    
+    p %>%
+      ggplotly(tooltip = c("text")) %>%
+      layout(plot_bgcolor = 'rgba(0, 0, 0, 0)',
+             paper_bgcolor = 'rgba(0, 0, 0, 0)')
+  })
+  
+  output$estatisticas_ui <- renderUI({
+    selectInput("estatisticas_ui",
+                "País",
+                choices = paises,
+                selected = NULL,
+                multiple = TRUE)
+  })
+  
+  output$estatisticas <- renderDataTable({
+    
+    reac_estatisticas = reactive({
+      
+      if(is.null(input$estatisticas_ui)) {
+        
+        estatisticas %>% # https://datatables.net/examples/basic_init/language.html
+          rename(Vitórias = Vitorias) %>%
+          select(-Pais)
+        
+      } else {
+        
+        estatisticas %>% 
+          rename(Vitórias = Vitorias) %>%
+          filter(Pais %in% input$estatisticas_ui) %>%
+          select(-Pais)
+        
+      }
+      
+    })
+    
+    reac_estatisticas()
+
+    # https://datatables.net/examples/basic_init/language.html
+    # https://stackoverflow.com/questions/25205410/r-shiny-set-datatable-column-width
+  }, escape = FALSE, options = list(language = list(search = "Procurar:",
+                                                    info = "Mostrando página _PAGE_ de _PAGES_",
+                                                    lengthMenu = "Mostrar _MENU_ clubes por página",
+                                                    zeroRecords = "Nenhum clube encontrado :(",
+                                                    infoEmpty = "",
+                                                    infoFiltered = "",
+                                                    paginate = list("next" = "Próximo",
+                                                                    previous = "Anterior")),
+                                    columnDefs = list(list(width = '200px', targets = 0))))
   
   #output$debug = renderText(input$rank_pais)
 }

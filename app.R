@@ -408,7 +408,7 @@ server <- function(input, output) {
                                                     infoFiltered = "",
                                                     paginate = list("next" = "Próximo",
                                                                     previous = "Anterior")),
-                                    columnDefs = list(list(width = '200px', targets = 0)))) 
+                                    columnDefs = list(list(width = '200px', targets = 0))))
   
   #output$debug = renderText(input$rank_pais)
 }
