@@ -1,9 +1,7 @@
 options(encoding = "UTF-8")
 options(OutDec = ",")
 
-library(dplyr)
-library(stringr)
-
+source("dependencies.R")
 source("aux_shiny.R")
 
 dados = read.csv("data/rankings/ranktodos.csv", stringsAsFactors = FALSE) %>%
