@@ -140,4 +140,4 @@ df_teams.columns=cols
 df_teams
 
 #salva o cadastro num .csv
-df_teams.to_csv('data/teams.csv')
+df_teams.to_csv('data/teams1500.csv')
