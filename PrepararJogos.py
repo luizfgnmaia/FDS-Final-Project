@@ -10,16 +10,16 @@ import numpy as np
 import pandas as pd
 
 #lê os .csv e gera um dataframe para cada país
-df_arg = pd.read_csv("data/argentina.csv")
-df_bol = pd.read_csv("data/bolivia.csv")
-df_bra = pd.read_csv("data/brasil.csv")
-df_chi = pd.read_csv("data/chile.csv")
-df_col = pd.read_csv("data/colombia.csv")
-df_ecu = pd.read_csv("data/equador.csv")
-df_par = pd.read_csv("data/paraguai.csv")
-df_per = pd.read_csv("data/peru.csv")
-df_uru = pd.read_csv("data/uruguai.csv")
-df_ven = pd.read_csv("data/venezuela.csv")
+df_arg = pd.read_csv("data/Argentina.csv")
+df_bol = pd.read_csv("data/Bolivia.csv")
+df_bra = pd.read_csv("data/Brasil.csv")
+df_chi = pd.read_csv("data/Chile.csv")
+df_col = pd.read_csv("data/Colombia.csv")
+df_ecu = pd.read_csv("data/Equador.csv")
+df_par = pd.read_csv("data/Paraguai.csv")
+df_per = pd.read_csv("data/Peru.csv")
+df_uru = pd.read_csv("data/Uruguai.csv")
+df_ven = pd.read_csv("data/Venezuela.csv")
 
 df_teams = pd.read_csv('data/teams.csv')
 
