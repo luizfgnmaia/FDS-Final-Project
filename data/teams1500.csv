@@ -1,0 +1,342 @@
+,id,nome,pais,rate
+0,1,Aldosivi,Argentina,1500
+1,2,All Boys,Argentina,1500
+2,3,Almagro,Argentina,1500
+3,4,Argentinos Jrs,Argentina,1500
+4,5,Arsenal Sarandi,Argentina,1500
+5,6,Atl. Rafaela,Argentina,1500
+6,7,Atl. Tucuman,Argentina,1500
+7,8,Banfield,Argentina,1500
+8,9,Belgrano,Argentina,1500
+9,10,Boca Juniors,Argentina,1500
+10,11,Central Cordoba,Argentina,1500
+11,12,Chacarita Juniors,Argentina,1500
+12,13,Colon Santa FE,Argentina,1500
+13,14,Crucero del Norte,Argentina,1500
+14,15,Defensa y Justicia,Argentina,1500
+15,16,Estudiantes L.P.,Argentina,1500
+16,17,Gimnasia Jujuy,Argentina,1500
+17,18,Gimnasia L.P.,Argentina,1500
+18,19,Godoy Cruz,Argentina,1500
+19,20,Huracan,Argentina,1500
+20,21,Huracan Tres Arroyos,Argentina,1500
+21,22,Independiente,Argentina,1500
+22,23,Instituto,Argentina,1500
+23,24,Lanus,Argentina,1500
+24,25,Newells Old Boys,Argentina,1500
+25,26,Nueva Chicago,Argentina,1500
+26,27,Olimpo Bahia Blanca,Argentina,1500
+27,28,Patronato,Argentina,1500
+28,29,Quilmes,Argentina,1500
+29,30,Racing Club,Argentina,1500
+30,31,River Plate,Argentina,1500
+31,32,Rosario Central,Argentina,1500
+32,33,San Lorenzo,Argentina,1500
+33,34,San Martin S.J.,Argentina,1500
+34,35,San Martin T.,Argentina,1500
+35,36,Sarmiento Junin,Argentina,1500
+36,37,Talleres Cordoba,Argentina,1500
+37,38,Temperley,Argentina,1500
+38,39,Tigre,Argentina,1500
+39,40,Tiro Federal,Argentina,1500
+40,41,Union de Santa Fe,Argentina,1500
+41,42,Velez Sarsfield,Argentina,1500
+0,101,1 de Mayo,Bolivia,1500
+1,102,Always Ready,Bolivia,1500
+2,103,Aurora,Bolivia,1500
+3,104,Bermejo,Bolivia,1500
+4,105,Blooming,Bolivia,1500
+5,106,Bolivar,Bolivia,1500
+6,107,Central Union,Bolivia,1500
+7,108,Ciclon,Bolivia,1500
+8,109,Destroyers,Bolivia,1500
+9,110,Fancesa,Bolivia,1500
+10,111,Guabira,Bolivia,1500
+11,112,Iberoamericana,Bolivia,1500
+12,113,Independiente,Bolivia,1500
+13,114,Industrial Aviles,Bolivia,1500
+14,115,La Paz,Bolivia,1500
+15,116,Mariscal,Bolivia,1500
+16,117,Nacional Potosi,Bolivia,1500
+17,118,Oriente Petrolero,Bolivia,1500
+18,119,Petrolero de Yacuiba,Bolivia,1500
+19,120,Real Mamore,Bolivia,1500
+20,121,Real Potosi,Bolivia,1500
+21,122,Royal Pari,Bolivia,1500
+22,123,San Jose,Bolivia,1500
+23,124,Santa Cruz,Bolivia,1500
+24,125,Sport Boys,Bolivia,1500
+25,126,The Strongest,Bolivia,1500
+26,127,U. Pando,Bolivia,1500
+27,128,U. Sucre,Bolivia,1500
+28,129,Universitario Beni,Bolivia,1500
+29,130,Wilstermann,Bolivia,1500
+0,201,America MG,Brasil,1500
+1,202,America RN,Brasil,1500
+2,203,Athletico-PR,Brasil,1500
+3,204,Atletico GO,Brasil,1500
+4,205,Atletico-MG,Brasil,1500
+5,206,Avai,Brasil,1500
+6,207,Bahia,Brasil,1500
+7,208,Barueri,Brasil,1500
+8,209,Betim,Brasil,1500
+9,210,Botafogo RJ,Brasil,1500
+10,211,Brasiliense,Brasil,1500
+11,212,Ceara,Brasil,1500
+12,213,Chapecoense-SC,Brasil,1500
+13,214,Corinthians,Brasil,1500
+14,215,Coritiba,Brasil,1500
+15,216,Criciuma,Brasil,1500
+16,217,Cruzeiro,Brasil,1500
+17,218,Figueirense,Brasil,1500
+18,219,Flamengo RJ,Brasil,1500
+19,220,Fluminense,Brasil,1500
+20,221,Fortaleza,Brasil,1500
+21,222,Gama,Brasil,1500
+22,223,Goias,Brasil,1500
+23,224,Gremio,Brasil,1500
+24,225,Guarani,Brasil,1500
+25,226,Internacional,Brasil,1500
+26,227,Joinville,Brasil,1500
+27,228,Juventude,Brasil,1500
+28,229,Nautico,Brasil,1500
+29,230,Palmeiras,Brasil,1500
+30,231,Parana,Brasil,1500
+31,232,Paysandu PA,Brasil,1500
+32,233,Ponte Preta,Brasil,1500
+33,234,Portuguesa,Brasil,1500
+34,235,Santa Cruz,Brasil,1500
+35,236,Santo Andre,Brasil,1500
+36,237,Santos,Brasil,1500
+37,238,Sao Caetano,Brasil,1500
+38,239,Sao Paulo,Brasil,1500
+39,240,Sport Recife,Brasil,1500
+40,241,Vasco,Brasil,1500
+41,242,Vitoria,Brasil,1500
+0,301,A. Italiano,Chile,1500
+1,302,Antofagasta,Chile,1500
+2,303,Barnechea,Chile,1500
+3,304,C.D.S. Naval,Chile,1500
+4,305,Cobreloa,Chile,1500
+5,306,Cobresal,Chile,1500
+6,307,Colo Colo,Chile,1500
+7,308,Coquimbo,Chile,1500
+8,309,Curico Unido,Chile,1500
+9,310,D. Concepcion,Chile,1500
+10,311,D. Puerto Montt,Chile,1500
+11,312,Deportes Iquique,Chile,1500
+12,313,Deportes Temuco,Chile,1500
+13,314,Everton,Chile,1500
+14,315,Huachipato,Chile,1500
+15,316,La Serena,Chile,1500
+16,317,Lota Schwager,Chile,1500
+17,318,Melipilla,Chile,1500
+18,319,Nublense,Chile,1500
+19,320,O'Higgins,Chile,1500
+20,321,Osorno,Chile,1500
+21,322,Palestino,Chile,1500
+22,323,Rangers,Chile,1500
+23,324,S. Morning,Chile,1500
+24,325,S. Wanderers,Chile,1500
+25,326,San Felipe,Chile,1500
+26,327,San Luis,Chile,1500
+27,328,San Marcos de Arica,Chile,1500
+28,329,U. Catolica,Chile,1500
+29,330,U. De Chile,Chile,1500
+30,331,U. De Concepcion,Chile,1500
+31,332,U. Espanola,Chile,1500
+32,333,Union La Calera,Chile,1500
+0,401,Aguilas,Colombia,1500
+1,402,America De Cali,Colombia,1500
+2,403,Atl. Nacional,Colombia,1500
+3,404,Bucaramanga,Colombia,1500
+4,405,Cartagena,Colombia,1500
+5,406,Centauros,Colombia,1500
+6,407,Chico,Colombia,1500
+7,408,Cortulua,Colombia,1500
+8,409,Cucuta,Colombia,1500
+9,410,Dep. Cali,Colombia,1500
+10,411,Dep. Pasto,Colombia,1500
+11,412,Deportes Tolima,Colombia,1500
+12,413,Envigado,Colombia,1500
+13,414,Fortaleza,Colombia,1500
+14,415,Huila,Colombia,1500
+15,416,Ind. Medellin,Colombia,1500
+16,417,Jaguares de Cordoba,Colombia,1500
+17,418,Junior,Colombia,1500
+18,419,La Equidad,Colombia,1500
+19,420,Leones,Colombia,1500
+20,421,Millonarios,Colombia,1500
+21,422,Once Caldas,Colombia,1500
+22,423,Patriotas,Colombia,1500
+23,424,Pereira,Colombia,1500
+24,425,Petrolera,Colombia,1500
+25,426,Quindio,Colombia,1500
+26,427,Santa Fe,Colombia,1500
+27,428,Tigres,Colombia,1500
+28,429,U. Magdalena,Colombia,1500
+29,430,Uniautonoma,Colombia,1500
+0,501,America de Quito,Equador,1500
+1,502,Aucas,Equador,1500
+2,503,Barcelona SC,Equador,1500
+3,504,Clan Juvenil,Equador,1500
+4,505,Delfin,Equador,1500
+5,506,Dep. Azogues,Equador,1500
+6,507,Dep. Cuenca,Equador,1500
+7,508,Dep. Quito,Equador,1500
+8,509,EL Nacional,Equador,1500
+9,510,Emelec,Equador,1500
+10,511,Espoli,Equador,1500
+11,512,Fuerza A.,Equador,1500
+12,513,Guayaquil City,Equador,1500
+13,514,Imbabura,Equador,1500
+14,515,Ind. del Valle,Equador,1500
+15,516,LDU Loja,Equador,1500
+16,517,LDU Portoviejo,Equador,1500
+17,518,LDU Quito,Equador,1500
+18,519,Macara,Equador,1500
+19,520,Manta,Equador,1500
+20,521,Mushuc Runa,Equador,1500
+21,522,Olmedo,Equador,1500
+22,523,Quevedo,Equador,1500
+23,524,Tecnico U.,Equador,1500
+24,525,U. Catolica,Equador,1500
+0,601,12 de Octubre,Paraguai,1500
+1,602,2 de Mayo,Paraguai,1500
+2,603,3 de Febrero,Paraguai,1500
+3,604,Cerro Porteno,Paraguai,1500
+4,605,Cerro Porteno PF,Paraguai,1500
+5,606,Dep. Capiata,Paraguai,1500
+6,607,Deportivo Santani,Paraguai,1500
+7,608,Diaz,Paraguai,1500
+8,609,Fernando de la Mora,Paraguai,1500
+9,610,General Caballero,Paraguai,1500
+10,611,Guarani,Paraguai,1500
+11,612,Hayes,Paraguai,1500
+12,613,Independiente FBC,Paraguai,1500
+13,614,Libertad Asuncion,Paraguai,1500
+14,615,Nacional Asuncion,Paraguai,1500
+15,616,Olimpia Asuncion,Paraguai,1500
+16,617,Recoleta,Paraguai,1500
+17,618,River Plate,Paraguai,1500
+18,619,Rubio Nu,Paraguai,1500
+19,620,San Lorenzo,Paraguai,1500
+20,621,Silvio Pettirossi,Paraguai,1500
+21,622,Sol de America,Paraguai,1500
+22,623,Sp. Carapegua,Paraguai,1500
+23,624,Sp. Luqueno,Paraguai,1500
+24,625,Sport Colombia,Paraguai,1500
+25,626,Sportivo Trinidense,Paraguai,1500
+26,627,Tacuary,Paraguai,1500
+0,701,AD Cantolao,Peru,1500
+1,702,Alianza Atl.,Peru,1500
+2,703,Alianza Huanuco,Peru,1500
+3,704,Alianza Lima,Peru,1500
+4,705,Atl. Minero,Peru,1500
+5,706,Atletico Universidad,Peru,1500
+6,707,Ayacucho,Peru,1500
+7,708,Binacional,Peru,1500
+8,709,CNI,Peru,1500
+9,710,Cajamarca,Peru,1500
+10,711,Carlos Mannucci,Peru,1500
+11,712,Cesar Vallejo,Peru,1500
+12,713,Cienciano,Peru,1500
+13,714,Cobresol,Peru,1500
+14,715,Comerciantes Unidos,Peru,1500
+15,716,Coopsol,Peru,1500
+16,717,Coronel,Peru,1500
+17,718,Defensor La Bocana,Peru,1500
+18,719,Dep. Municipal,Peru,1500
+19,720,Estudiantes de Medicina,Peru,1500
+20,721,FBC Melgar,Peru,1500
+21,722,Garcilaso,Peru,1500
+22,723,Huaral,Peru,1500
+23,724,Jose Galvez,Peru,1500
+24,725,Juan Aurich,Peru,1500
+25,726,Leon de Huanuco,Peru,1500
+26,727,Los Caimanes,Peru,1500
+27,728,Molinos El Pirata,Peru,1500
+28,729,Pacifico,Peru,1500
+29,730,San Simon,Peru,1500
+30,731,Sport Ancash,Peru,1500
+31,732,Sport Boys,Peru,1500
+32,733,Sport Huancayo,Peru,1500
+33,734,Sport Loreto,Peru,1500
+34,735,Sport Rosario,Peru,1500
+35,736,Sporting Cristal,Peru,1500
+36,737,Total Chalaco,Peru,1500
+37,738,U. San Martin,Peru,1500
+38,739,U. de Deportes,Peru,1500
+39,740,Union Comercio,Peru,1500
+40,741,Wanka,Peru,1500
+0,801,Atenas,Uruguai,1500
+1,802,Bella Vista,Uruguai,1500
+2,803,Boston River,Uruguai,1500
+3,804,CA Cerro,Uruguai,1500
+4,805,CA Torque,Uruguai,1500
+5,806,Central Esp.,Uruguai,1500
+6,807,Cerrito,Uruguai,1500
+7,808,Cerro Largo,Uruguai,1500
+8,809,Colonia,Uruguai,1500
+9,810,Danubio,Uruguai,1500
+10,811,Defensor Sp.,Uruguai,1500
+11,812,Fenix,Uruguai,1500
+12,813,Juventud,Uruguai,1500
+13,814,Liverpool M.,Uruguai,1500
+14,815,Maldonado,Uruguai,1500
+15,816,Miramar,Uruguai,1500
+16,817,Nacional,Uruguai,1500
+17,818,Paysandu Bella Vista,Uruguai,1500
+18,819,Paysandu FC,Uruguai,1500
+19,820,Penarol,Uruguai,1500
+20,821,Plaza Colonia,Uruguai,1500
+21,822,Progreso,Uruguai,1500
+22,823,Racing Montevideo,Uruguai,1500
+23,824,Rampla Juniors,Uruguai,1500
+24,825,Rentistas,Uruguai,1500
+25,826,River Plate,Uruguai,1500
+26,827,Rocha,Uruguai,1500
+27,828,Sayago,Uruguai,1500
+28,829,Sisley,Uruguai,1500
+29,830,Sud America,Uruguai,1500
+30,831,Tacuarembo,Uruguai,1500
+31,832,Villa Espanola,Uruguai,1500
+32,833,Villa Teresa,Uruguai,1500
+33,834,Wanderers,Uruguai,1500
+0,901,AC Lala FC,Venezuela,1500
+1,902,Aragua,Venezuela,1500
+2,903,Atl. Socopo,Venezuela,1500
+3,904,Atl. Venezuela,Venezuela,1500
+4,905,Carabobo,Venezuela,1500
+5,906,Caracas,Venezuela,1500
+6,907,Caroni,Venezuela,1500
+7,908,Centro Italo,Venezuela,1500
+8,909,Dep. Anzoategui,Venezuela,1500
+9,910,Dep. Maracaibo,Venezuela,1500
+10,911,Dep. Tachira,Venezuela,1500
+11,912,El Vigia,Venezuela,1500
+12,913,Estrella Roja,Venezuela,1500
+13,914,Estudiantes Caracas,Venezuela,1500
+14,915,Estudiantes Merida,Venezuela,1500
+15,916,Galicia,Venezuela,1500
+16,917,ItalMaracaibo,Venezuela,1500
+17,918,JBL Zulia,Venezuela,1500
+18,919,La Guaira,Venezuela,1500
+19,920,Lara,Venezuela,1500
+20,921,Llaneros,Venezuela,1500
+21,922,Metropolitanos,Venezuela,1500
+22,923,Mineros,Venezuela,1500
+23,924,Minerven,Venezuela,1500
+24,925,Monagas,Venezuela,1500
+25,926,Nacional Tachira,Venezuela,1500
+26,927,Petare,Venezuela,1500
+27,928,Portuguesa,Venezuela,1500
+28,929,Puerto Cabello,Venezuela,1500
+29,930,Trujillanos,Venezuela,1500
+30,931,Tucanes,Venezuela,1500
+31,932,U. A. Maracaibo,Venezuela,1500
+32,933,Union Lara,Venezuela,1500
+33,934,Urena,Venezuela,1500
+34,935,Yaracuyanos,Venezuela,1500
+35,936,Zamora,Venezuela,1500
+36,937,Zulia,Venezuela,1500
