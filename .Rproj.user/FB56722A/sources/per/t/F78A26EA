@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3332294343",
+    "hash" : "2867352549",
     "id" : "F78A26EA",
-    "lastKnownWriteTime" : 1568399937,
-    "last_content_update" : 1568399937541,
+    "lastKnownWriteTime" : 1568400505,
+    "last_content_update" : 1568400505019,
     "path" : "~/GitHub/FDS-Final-Project/app.R",
     "project_path" : "app.R",
     "properties" : {
-        "cursorPosition" : "175,0",
-        "scrollLine" : "158"
+        "cursorPosition" : "141,31",
+        "scrollLine" : "141"
     },
     "relative_order" : 1,
     "source_on_save" : false,

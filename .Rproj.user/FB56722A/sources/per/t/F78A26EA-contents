@@ -169,7 +169,7 @@ body <- dashboardBody(
     )
 
 ui <- dashboardPage(skin = "red",
-                    dashboardHeader(title = "ConmElo"),
+                    dashboardHeader(title = "ConmebElo"),
                     sidebar,
                     body
 )
