@@ -49,7 +49,7 @@ paises = sort(unique(dados$Pais))
 datas = sort(unique(dados$Data))
 len_datas = length(datas)
 
-# Times com maiores elos na história
+# Clubes com as maiores pontuações
 ################################################################################# 
 
 maiores_pontuacoes = dados %>%
@@ -66,7 +66,7 @@ maiores_pontuacoes = dados %>%
 ################################################################################# 
 
 
-# Times com mais tempo na primeira posição do ranking
+# Clubes que permaneceram mais meses consecutivos no primeiro lugar do ranking
 ################################################################################# 
 
 maior_por_mes = dados %>%
@@ -103,6 +103,19 @@ maiores_streaks = tibble(Clube = clube, Pais = pais, De = de, Ate = ate, Meses =
   mutate(De = format(as.Date(De), "%b %Y"),
          Ate = format(as.Date(Ate), "%b %Y")) %>%
   arrange(desc(Meses)) %>%
+  inner_join(flags_df) %>%
+  mutate(Clube = paste(flag, Clube),
+         Meses = as.integer(Meses)) %>%
+  select(-Pais, -flag)
+
+################################################################################# 
+
+# Clubes que permaneceram mais meses no primeiro lugar do ranking
+################################################################################# 
+mais_meses_lider = maior_por_mes %>%
+  count(Clube, Pais) %>%
+  arrange(desc(n)) %>%
+  rename(Meses = n) %>%
   inner_join(flags_df) %>%
   mutate(Clube = paste(flag, Clube),
          Meses = as.integer(Meses)) %>%
@@ -528,6 +541,6 @@ estatisticas = tibble(id = ids, Vitorias = vitorias, Empates = empates, Partidas
 rm(list = setdiff(ls(), c("dados", "clubes", "paises", "datas", "len_datas", 
                           "maiores_pontuacoes", "maiores_streaks", "tabela_dados", 
                           "df_confrontos", "df_mandante", "df_partidas",
-                          "placares", "confrontos", "estatisticas")))
+                          "placares", "confrontos", "estatisticas", "mais_meses_lider")))
 
 save.image("pre_shiny.RData")

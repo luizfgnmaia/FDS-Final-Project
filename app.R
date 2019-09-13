@@ -39,8 +39,9 @@ sidebar <- dashboardSidebar(
     menuItem("Rankings", icon = icon("trophy"), tabName = "rank"),
     menuItem("Histórico", icon = icon("chart-line"), tabName = "hist"),
     menuItem("Resultados", icon = icon("poll-h"), tabName = "result",
-             menuSubItem("Maiores pontuações", tabName = "maiores_pontuacoes"),
-             menuSubItem("Mais tempo na liderança", tabName = "tempo_lideranca")),
+             menuSubItem("Mais meses na liderança", tabName = "tempo_lideranca"),
+             menuSubItem("Meses consecutivos no topo", tabName = "tempo_lideranca_consec"),
+             menuSubItem("Maiores pontuações", tabName = "maiores_pontuacoes")),
     menuItem("Próximos passos", icon = icon("forward"), tabName = "next"),
     menuItem("Github", icon = icon("github"), href = "https://github.com/luizfgnmaia/FDS-Final-Project")
   )
@@ -150,8 +151,12 @@ body <- dashboardBody(
             tableOutput("maiores_pontuacoes")),
     
     tabItem(tabName = "tempo_lideranca",
-            h2("Clubes que permaneceram mais meses consecutivos no primeiro lugar do ranking"),
+            h2("Clubes que permaneceram mais meses no primeiro lugar do ranking"),
             tableOutput("tempo_lideranca")),
+    
+    tabItem(tabName = "tempo_lideranca_consec",
+            h2("Clubes que permaneceram mais meses consecutivos no primeiro lugar do ranking"),
+            tableOutput("tempo_lideranca_consec")),
     
     # Próximos passos
     #################################################################################
@@ -164,7 +169,7 @@ body <- dashboardBody(
     )
 
 ui <- dashboardPage(skin = "red",
-                    dashboardHeader(title = ""),
+                    dashboardHeader(title = "ConmElo"),
                     sidebar,
                     body
 )
@@ -183,14 +188,14 @@ server <- function(input, output) {
       ggplot(aes(x = Data, y = Elo, group = 1, text = text)) + # https://stackoverflow.com/questions/45948926/ggplotly-text-aesthetic-causing-geom-line-to-not-display
       geom_line(aes(color = Clube), size = 0.75) +
       tema +
+      scale_x_date(breaks = as.Date(c(paste0(2002:2020, "-01-01"))),
+                   labels = c(2002:2020)) +
       xlab("")
     
     p %>%
       ggplotly(tooltip = c("text")) %>% 
       layout(plot_bgcolor = 'rgba(0, 0, 0, 0)', # https://community.plot.ly/t/create-plots-with-transparent-background/14658
              paper_bgcolor = 'rgba(0, 0, 0, 0)')
-    
-
   })
   
   output$hist_ui <- renderUI({
@@ -282,12 +287,17 @@ server <- function(input, output) {
                                         striped = TRUE, hover = TRUE, width = 700,
                                         sanitize.text.function = function(x) x)
   
-  output$tempo_lideranca <- renderTable(maiores_streaks %>%
+  output$tempo_lideranca_consec <- renderTable(maiores_streaks %>%
                                                 rename(Até = Ate), 
                                               rownames = TRUE, 
                                               striped = TRUE, hover = TRUE, width = 700,
                                               sanitize.text.function = function(x) x,
                                               na = " ")
+  
+  output$tempo_lideranca <- renderTable(mais_meses_lider,
+                                        rownames = TRUE,
+                                        striped = TRUE, hover = TRUE, width = 700,
+                                        sanitize.text.function = function(x) x)
   
   output$competicoes <- renderTable(tabela_dados %>%
                                             rename(Competição = Competicao),
