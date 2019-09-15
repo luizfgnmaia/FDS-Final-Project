@@ -537,10 +537,25 @@ estatisticas = tibble(id = ids, Vitorias = vitorias, Empates = empates, Partidas
   arrange(desc(Aproveitamento))
   
 #################################################################################
+
+# Elo médio
+#################################################################################
+elo_medio = dados %>%
+  group_by(Clube, Pais) %>%
+  summarise(Elo = mean(Elo)) %>%
+  arrange(desc(Elo)) %>%
+  ungroup() %>%
+  inner_join(flags_df) %>%
+  mutate(Clube = paste(flag, Clube)) %>%
+  select(-Pais, -flag)
+#################################################################################
+
+
       
 rm(list = setdiff(ls(), c("dados", "clubes", "paises", "datas", "len_datas", 
                           "maiores_pontuacoes", "maiores_streaks", "tabela_dados", 
                           "df_confrontos", "df_mandante", "df_partidas",
-                          "placares", "confrontos", "estatisticas", "mais_meses_lider")))
+                          "placares", "confrontos", "estatisticas", "mais_meses_lider",
+                          "elo_medio")))
 
 save.image("pre_shiny.RData")

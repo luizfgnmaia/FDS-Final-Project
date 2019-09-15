@@ -41,7 +41,8 @@ sidebar <- dashboardSidebar(
     menuItem("Resultados", icon = icon("poll-h"), tabName = "result",
              menuSubItem("Mais meses na liderança", tabName = "tempo_lideranca"),
              menuSubItem("Meses consecutivos no topo", tabName = "tempo_lideranca_consec"),
-             menuSubItem("Maiores pontuações", tabName = "maiores_pontuacoes")),
+             menuSubItem("Maiores pontuações", tabName = "maiores_pontuacoes"),
+             menuSubItem("Elo médio por clube", tabName = "elo_medio")),
     menuItem("Próximos passos", icon = icon("forward"), tabName = "next"),
     menuItem("Github", icon = icon("github"), href = "https://github.com/luizfgnmaia/FDS-Final-Project")
   )
@@ -157,6 +158,10 @@ body <- dashboardBody(
     tabItem(tabName = "tempo_lideranca_consec",
             h2("Clubes que permaneceram mais meses consecutivos no primeiro lugar do ranking"),
             tableOutput("tempo_lideranca_consec")),
+    
+    tabItem(tabName = "elo_medio",
+            h2("Elo médio por clube"),
+            tableOutput("elo_medio")),
     
     # Próximos passos
     #################################################################################
@@ -421,6 +426,12 @@ server <- function(input, output) {
                                     columnDefs = list(list(width = '200px', targets = 0))))
   
   #output$debug = renderText(input$rank_pais)
+  
+  output$elo_medio <- renderTable(elo_medio %>%
+                                    rename(`Elo médio` = Elo),
+                                  rownames = TRUE,
+                                  striped = TRUE, hover = TRUE, width = 700,
+                                  sanitize.text.function = function(x) x)
 }
 
 shinyApp(ui, server)
