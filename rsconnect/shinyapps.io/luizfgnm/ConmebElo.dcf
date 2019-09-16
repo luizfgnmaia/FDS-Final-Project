@@ -5,9 +5,9 @@ account: luizfgnm
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1192889
-bundleId: 2418532
+bundleId: 2418757
 url: https://luizfgnm.shinyapps.io/ConmebElo/
-when: 1568673394.71699
+when: 1568678280.60589
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: .gitattributes|1_coleta_dos_dados.ipynb|2_base_de_dados.ipynb|3_analise_exploratoria.ipynb|4_rodando_o_modelo.ipynb|5_resultados.ipynb|geckodriver.exe|README.md|README.Rmd|tercas.csv|__pycache__/get_hrefs.cpython-36.pyc|__pycache__/scrape_flashscore.cpython-36.pyc|.ipynb_checkpoints|data|lixeira
