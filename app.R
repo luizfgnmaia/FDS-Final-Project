@@ -116,7 +116,7 @@ body <- dashboardBody(
     tabItem(tabName = "partidas",
             h2("Quantidade de partidas por confederação"),
             plotlyOutput("partidas"),
-            HTML("Neste gráfico pode-se observar uma vantagem para as principais nações dentro do cenário do futebol sul-americano, com destaque para a Colômbia com 7508 jogos.")),
+            HTML("Neste gráfico pode-se observar uma vantagem para as principais nações dentro do cenário do futebol sul-americano, com destaque para a Colômbia com 7888 jogos.")),
     
     tabItem(tabName = "placares",
             h2("Placares mais comuns"),
