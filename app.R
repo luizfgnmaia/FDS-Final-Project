@@ -43,7 +43,7 @@ sidebar <- dashboardSidebar(
              menuSubItem("Meses consecutivos no topo", tabName = "tempo_lideranca_consec"),
              menuSubItem("Maiores pontuações", tabName = "maiores_pontuacoes"),
              menuSubItem("Elo médio por clube", tabName = "elo_medio")),
-    menuItem("Próximos passos", icon = icon("forward"), tabName = "next"),
+    menuItem("Conclusão e próximos passos", icon = icon("forward"), tabName = "next"),
     menuItem("Github", icon = icon("github"), href = "https://github.com/luizfgnmaia/FDS-Final-Project")
   )
 )
@@ -57,8 +57,17 @@ body <- dashboardBody(
     #################################################################################
 
     tabItem(tabName = "int",
-            HTML('<iframe width="600" height="400" src="https://www.youtube.com/embed/AREB7MCGaUY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'),
-            h2("Introdução")),
+            HTML('<iframe width="600" height="400" src="https://www.youtube.com/embed/Ip1Qr3tsh44" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'),
+            h2("Introdução"),
+            h2("Motivação"),
+            HTML("<p> Ranquear equipes de futebol é uma pratica muito antiga e, atualmente, as principais ligas e federações do mundo já possuem algum tipo de raqueamento para seus times. O ranking mais famoso, é o Ranking Mundial da Fifa. O sistema de ranking da Fifa começou a ser implementado em agosto de 1993 e passou por muitas reformulações desde então. Em 2018 o conselho Fifa no intuito de deixar o ranking mais justo e diminuir a chance de manipulação alterou o seu modelo de cálculo, inspirados no sistema de Ranking Elo."),
+            HTML("<p> Arpad Elo, professor de física e mestre em xadrez, propôs um modelo estatístico para tentar solucionar o problema de qualificar jogadores de xadrez da forma mais justa e razoável possível. Neste trabalho, um dos grandes desafios é estabelecer a maneira, o modelo, e os critérios que possam se aproximar ao máximo da real força de um time para determinada partida, supondo que tal força exista. Outro desafio, consiste em adaptar um modelo de ranqueamento para as equipes da América do Sul que, além de poder ser calibrado em um espaço de tempo mais curto, contenha as forças relativas entres as equipes, um modelo alternativo ao apresentado pela federação máxima de futebol no continente, a Conmebol. Tendo como inspiração o sistema de Ranking Elo e da FIFA, para sanar estes problemas, foi necessária uma abordagem mais científica para redistribuição das equipes no ranking e assim chegar próximo a um resultado satisfatório."),
+            h2("Objetivos"),
+            HTML("<p> Os objetivos deste trabalho foram:"),
+            HTML("<p> &#8226; Construir um ranking mensal das equipes de futebol da América do Sul a partir de 2002 com base na metodologia Elo;"),
+            HTML("<p> &#8226 Criar uma interface que permita que um usuário consiga buscar informações sobre clubes e períodos de tempo específicos."),
+            h2("Abordagem")
+    ),
     
     #################################################################################
     
@@ -76,7 +85,9 @@ body <- dashboardBody(
                         max = datas[len_datas],
                         value = datas[len_datas]), 
             uiOutput("rank_ui"),
-            tableOutput("rank_table")
+            tableOutput("rank_table"),
+            h4("Vídeo demonstrativo:"),
+            HTML('<iframe width="600" height="400" src="https://www.youtube.com/embed/FakUq5S9q_Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
     ),
     
     #################################################################################
@@ -88,7 +99,9 @@ body <- dashboardBody(
             tabName = "hist",
             uiOutput("hist_ui"), # https://stackoverflow.com/questions/40996536/shiny-r-select-input-is-not-working
             plotlyOutput("hist_plot"),
-            textOutput("debug")
+            HTML("Temos nesse gráfico uma coleção de observações feitas sequencialmente ao longo dos anos para cada uma das equipes do ranking. Podemos analisar e comparar o comportamento dos times anos a ano, identificar períodos de ascensão e queda de rendimento, e também picos históricos."),
+            h4("Vídeo demonstrativo:"),
+            HTML('<iframe width="600" height="400" src="https://www.youtube.com/embed/8y8pDuuAot8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
     ),
     
     #################################################################################
@@ -98,26 +111,34 @@ body <- dashboardBody(
     
     tabItem(tabName = "partidas",
             h2("Quantidade de partidas por confederação"),
-            plotlyOutput("partidas")),
+            plotlyOutput("partidas"),
+            HTML("Neste gráfico pode-se observar uma vantagem para as principais nações dentro do cenário do futebol sul-americano, com destaque para a Colômbia com 7508 jogos.")),
     
     tabItem(tabName = "placares",
             h2("Placares mais comuns"),
-            plotlyOutput("placares")),
+            plotlyOutput("placares"),
+            HTML("As barras deste gráfico mostram as quantidade de jogos que terminaram com um determinado placar. Vemos que na base de dados, os quatro placares mais comuns são de empates ou vitórias do time mandante por uma margem de apenas um gol.")),
     
     tabItem(tabName = "mando",
             h2("Influência do mando de campo por confederação"),
-            plotlyOutput("mando")),
+            plotlyOutput("mando"),
+            HTML("A influencia do mando de campo no futebol sempre foi alvo de discussões entre especialistas e amantes do esporte. Neste gráfico estão dispostos os resultados das partidas considerando o mando de campo. Em algumas federações este fator vem se mostrando decisivo com peso de até 56,68%, como é o caso da Bolívia.")),
     
     tabItem(tabName = "confrontos",
             h2("Aproveitamento nos confrontos internacionais"),
             HTML('A entrada <b>(i,j)</b> desta matriz representa o aproveitamento dos clubes do país <b>i</b>  contra adversários do país <b>j</b>.'),
             plotlyOutput("df_confrontos"),
-            plotlyOutput("plot_confrontos")),
+            plotlyOutput("plot_confrontos"),
+            HTML("Podemos ver que o Brasil é o país com melhor aproveitamento nos confrontos internacionais; os clubes brasileiros apresentam um equilíbro em confrontos com equipes da Argentina e levam vantagem contra clubes dos demais países. 
+Acima do 50% de aproveitamento, além do Brasil, temos a Argentina, Colômbia e Equador. Em contrapartida, as equipes da Venezuela são as que demonstram o pior desempenho nos confrontos internacionais com 30,89% no geral e apenas 10,83% em confrontos contra clubes brasileiros.")),
     
     tabItem(tabName = "estatisticas",
             h2("Estatísticas dos clubes"),
             uiOutput("estatisticas_ui"),
-            dataTableOutput("estatisticas")),
+            dataTableOutput("estatisticas"),
+            HTML("Podemos observar estatísticas dos clubes participantes do ranking. Número de partidas computadas, vitórias, empates, gols feitos (GP), gols sofridos (GC) e o aproveitamento histórico das equipes."),
+            h4("Vídeo demonstrativo:"),
+            HTML('<iframe width="600" height="400" src="https://www.youtube.com/embed/N0i1gpY7-NA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')),
     
     #################################################################################
     
@@ -133,14 +154,21 @@ body <- dashboardBody(
             tableOutput("competicoes")
             ),
     
-    tabItem(tabName = "tratamento"),
+    tabItem(tabName = "tratamento",
+            h2("Tratamento na base de dados"),
+            HTML("<p> Obtidos os dados, o primeiro passo foi decidir o momento inicial do nosso ranking. Para alguns países, dados estavam disponíveis desde 1998 ou 1999, enquanto, para outros, somente a partir de 2002. Visando a uniformizar o momento de entrada dos times no ranking, escolhemos janeiro de 2002 como nosso tempo inicial."),
+            HTML("<p> Outra decisão de projeto foi quais times entrariam na base. Considerando competições como as copas nacionais, nossa massa de jogos continha diversos times que disputaram somente um punhado de partidas. Caso esses times fossem incluídos, seu rating ficaria necessariamente próximo ao rating inicial, acima de times “mais fortes”, que disputaram muitas partidas, o que levaria a um desequilíbrio do modelo como um todo."),
+            HTML("<p> Para minimizar o problema, decidimos incluir na base somente os times que disputaram ao menos uma temporada inteira na primeira divisão de seu país, num total de 341 times dos 10 países. E mantendo a coerência, deixamos na base de jogos somente aqueles em que ambas as equipes estivessem na nossa base de times, restando, assim, 60900 partidas na base."),
+            HTML("<p> Encontramos ainda uma última dificuldade: embora nossa base apresentasse, dentro de cada país, nomes “exclusivos” para cada time, o mesmo não ocorria entre os diversos países. Assim, era possível diferir o Atlético de Minas do de Goiás, mas não, por exemplo, o River Plate argentino do seu homônimo uruguaio. Para resolver esse problema, tivemos que acessar manualmente as partidas internacionais das equipes com nomes duplicados e identificar de qual time se tratava.")
+            ),
     
     #################################################################################
     
     # Modelagem
     #################################################################################
     
-    tabItem(tabName = "model"),
+    tabItem(tabName = "model",
+            withMathJax("")),
     
     #################################################################################
     

@@ -1,0 +1,56 @@
+ConmebElo
+---------
+
+ConmebElo é o Projeto Final desenvolvido por Flavio Fontanella, João
+Passeri e Luiz Fernando Maia da disciplina de Fundamentos de Data
+Science do Mestrado em Modelagem Matemática da FGV lecionada pelo
+professor Jorge Poco.
+
+O intuito deste projeto é construir um ranking mensal das equipes de
+futebol da Conmebol, a confederação sul-americana de futebol, utilizando
+a metodologia
+(Elo)\[<https://en.wikipedia.org/wiki/Elo_rating_system>\]. Além disso,
+foi construído um site que permita que um usuário busque informações
+sobre clubes e períodos de tempo específicos.
+
+Site
+----
+
+O site foi feito em Shiny, um pacote do software R que permite a criação
+de aplicativos web interativos, ele está hospedado em:
+<https://luizfgnm.shinyapps.io/ConmebElo/> e, além de descrever o passo
+a passo deste projeto, tem ferramentas iterativas que possibilitam que
+um usuário acompanhe o histórico de um time específico e do ranking como
+um todo.
+
+Notebooks
+---------
+
+As etapas do projeto constam em 5 notebooks Jupyter presentes nesse
+repositório:
+
+-   `1_coleta de dados`: mostra o processo de coleta dos dados;
+
+-   `2_base_de_dados`: detalha o processo do tratamento da base de
+    dados;
+
+-   `3_analise_exploratoria`: apresenta uma análise exploratória da base
+    de dados;
+
+-   `4_rodando_o_modelo`: descreve o processo da criação do ranking;
+
+-   `5_resultados`: exibe alguns resultados obtidos com o ranking.
+
+Visto que o site foi feito utilizando o R, os notebooks 3 e 5 foram
+feitos neste software com o uso de alguns dos seus pacotes de
+visualização, para executar estes notebooks pode ser necessária algumas
+instalações, seguem abaixo alguns guias que podem ser úteis: (Como
+utilizar o R no
+Jupyter)\[<https://docs.anaconda.com/anaconda/navigator/tutorials/r-lang/>\]
+e (Como utilizar o Plotly no
+Jupyter)\[<https://plot.ly/r/using-r-in-jupyter-notebooks/>\].
+
+Por sua vez, para a execução do primeiro notebook, pode ser necessária a
+instalação do pacote selenium para o Python.
+
+<https://luizfgnm.shinyapps.io/ConmebElo/>
