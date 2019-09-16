@@ -47,7 +47,8 @@ instalações, seguem abaixo alguns guias que podem ser úteis: [Como
 utilizar o R no
 Jupyter](https://docs.anaconda.com/anaconda/navigator/tutorials/r-lang/)
 e [Como utilizar o Plotly no
-Jupyter](https://plot.ly/r/using-r-in-jupyter-notebooks/).
+Jupyter](https://plot.ly/r/using-r-in-jupyter-notebooks/). De qualquer
+maneira, estas visualizações podem ser vistas no site.
 
-Por sua vez, para a execução do primeiro notebook, pode ser necessária a
+Por sua vez, para a execução do primeiro notebook, é necessária a
 instalação do pacote selenium para o Python.

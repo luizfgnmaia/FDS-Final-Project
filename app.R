@@ -35,7 +35,9 @@ sidebar <- dashboardSidebar(
              menuSubItem("Mando de campo", tabName = "mando"),
              menuSubItem("Confrontos internacionais", tabName = "confrontos"),
              menuSubItem("Estatísticas dos clubes", tabName = "estatisticas")),
-    menuItem("Modelagem", icon = icon("question"), tabName = "model"),
+    menuItem("Modelagem", icon = icon("question"), tabName = "model",
+             menuSubItem("Processo de modelagem", tabName = "processo"),
+             menuSubItem("Método Elo", tabName = "elo")),
     menuItem("Rankings", icon = icon("trophy"), tabName = "rank"),
     menuItem("Histórico", icon = icon("chart-line"), tabName = "hist"),
     menuItem("Resultados", icon = icon("poll-h"), tabName = "result",
@@ -59,14 +61,15 @@ body <- dashboardBody(
     tabItem(tabName = "int",
             HTML('<iframe width="600" height="400" src="https://www.youtube.com/embed/Ip1Qr3tsh44" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'),
             h2("Introdução"),
-            h2("Motivação"),
-            HTML("<p> Ranquear equipes de futebol é uma pratica muito antiga e, atualmente, as principais ligas e federações do mundo já possuem algum tipo de raqueamento para seus times. O ranking mais famoso, é o Ranking Mundial da Fifa. O sistema de ranking da Fifa começou a ser implementado em agosto de 1993 e passou por muitas reformulações desde então. Em 2018 o conselho Fifa no intuito de deixar o ranking mais justo e diminuir a chance de manipulação alterou o seu modelo de cálculo, inspirados no sistema de Ranking Elo."),
+            HTML('<p> Ranquear equipes de futebol é uma pratica muito antiga e, atualmente, as principais ligas e federações do mundo já possuem algum tipo de raqueamento para seus times. O ranking mais famoso, é o Ranking Mundial da Fifa. O sistema de ranking da Fifa começou a ser implementado em agosto de 1993 e passou por muitas reformulações desde então. Em 2018 o conselho Fifa no intuito de deixar o ranking mais justo e diminuir a chance de manipulação alterou o seu modelo de cálculo, inspirados no sistema de <a href="https://www.flashscore.com/">Ranking Elo</a>.'),
             HTML("<p> Arpad Elo, professor de física e mestre em xadrez, propôs um modelo estatístico para tentar solucionar o problema de qualificar jogadores de xadrez da forma mais justa e razoável possível. Neste trabalho, um dos grandes desafios é estabelecer a maneira, o modelo, e os critérios que possam se aproximar ao máximo da real força de um time para determinada partida, supondo que tal força exista. Outro desafio, consiste em adaptar um modelo de ranqueamento para as equipes da América do Sul que, além de poder ser calibrado em um espaço de tempo mais curto, contenha as forças relativas entres as equipes, um modelo alternativo ao apresentado pela federação máxima de futebol no continente, a Conmebol. Tendo como inspiração o sistema de Ranking Elo e da FIFA, para sanar estes problemas, foi necessária uma abordagem mais científica para redistribuição das equipes no ranking e assim chegar próximo a um resultado satisfatório."),
             h2("Objetivos"),
             HTML("<p> Os objetivos deste trabalho foram:"),
-            HTML("<p> &#8226; Construir um ranking mensal das equipes de futebol da América do Sul a partir de 2002 com base na metodologia Elo;"),
-            HTML("<p> &#8226 Criar uma interface que permita que um usuário consiga buscar informações sobre clubes e períodos de tempo específicos."),
-            h2("Abordagem")
+            HTML("<p> &#8226; Construir um ranking mensal das equipes da América do sul, utilizando dados históricos desde 2002 aplicando a metodologia Elo;"),
+            HTML("<p> &#8226; Construir interface que possibilite ao usuário buscar informações sobre um clube em determinado período de tempo."),
+            h2("Abordagem"),
+            HTML('<p> Iniciamos nosso projeto raspando dados dos confrontos de equipes da América do Sul no site <a href="https://www.flashscore.com/">FlashScore.com</a>. O serviço de resultados do site FlashScore.com oferece resultados de futebol de mais de 1000 ligas. Além do futebol, é possível acompanhar mais de 30 esportes no FlashScore.'),
+            HTML("<p> Depois de extrair e organizar os dados, utilizamos esses dados para realizarmos uma série de analises exploratórias sobre resultados que pensávamos intuitivamente ter sobre o comportamento das equipes sul-americanas. Essa exploração mostrou vantagens de equipes brasileiras e argentinas em confrontos diretos com times de outros países e um “empate” no histórico de confrontos de equipes dessa nacionalidade. Além de placares que mais ocorreram, e estatísticas gerais sobre os times que compõem o ranking. Foi estabelecido modelo de ranqueamento guiado no Ranking Elo, considerando na base do projeto somente equipes que jogaram pelo menos uma temporada inteira na primeira divisão de seu país, e estabelecendo uma atualização do ranking toda primeira terça-feira de cada mês. Desta maneira organizamos as series históricas de confrontos e assim foi possível criar gráficos que continham informações por períodos, colocados de maneira pratica e intuitiva para o usuário buscar os elementos que precisa.")
     ),
     
     #################################################################################
@@ -76,6 +79,7 @@ body <- dashboardBody(
     
     tabItem(tabName = "rank",
             h2("Ranking mensal geral ou por país"),
+            HTML("Apresentamos aqui os rankings mês a mês considerando todos os clubes ou apenas os clubes de países específicos."),
             mydateInput("rank_data", 
                         "Mês", 
                         format = "mm-yyyy", 
@@ -86,8 +90,8 @@ body <- dashboardBody(
                         value = datas[len_datas]), 
             uiOutput("rank_ui"),
             tableOutput("rank_table"),
-            h4("Vídeo demonstrativo:"),
-            HTML('<iframe width="600" height="400" src="https://www.youtube.com/embed/FakUq5S9q_Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
+            h4("Vídeo demonstrativo:")
+            #HTML('<iframe width="600" height="400" src="https://www.youtube.com/embed/FakUq5S9q_Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
     ),
     
     #################################################################################
@@ -97,9 +101,9 @@ body <- dashboardBody(
     
     tabItem(h2("Série temporal da pontuação dos clubes"),
             tabName = "hist",
+            HTML("Temos nesse gráfico uma coleção de observações feitas sequencialmente ao longo dos anos para cada uma das equipes do ranking. Podemos analisar e comparar o comportamento dos times anos a ano, identificar períodos de ascensão e queda de rendimento, e também picos históricos."),
             uiOutput("hist_ui"), # https://stackoverflow.com/questions/40996536/shiny-r-select-input-is-not-working
             plotlyOutput("hist_plot"),
-            HTML("Temos nesse gráfico uma coleção de observações feitas sequencialmente ao longo dos anos para cada uma das equipes do ranking. Podemos analisar e comparar o comportamento dos times anos a ano, identificar períodos de ascensão e queda de rendimento, e também picos históricos."),
             h4("Vídeo demonstrativo:"),
             HTML('<iframe width="600" height="400" src="https://www.youtube.com/embed/8y8pDuuAot8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
     ),
@@ -122,7 +126,7 @@ body <- dashboardBody(
     tabItem(tabName = "mando",
             h2("Influência do mando de campo por confederação"),
             plotlyOutput("mando"),
-            HTML("A influencia do mando de campo no futebol sempre foi alvo de discussões entre especialistas e amantes do esporte. Neste gráfico estão dispostos os resultados das partidas considerando o mando de campo. Em algumas federações este fator vem se mostrando decisivo com peso de até 56,68%, como é o caso da Bolívia.")),
+            HTML("A influência do mando de campo no futebol sempre foi alvo de discussões entre especialistas e amantes do esporte. Neste gráfico estão dispostos os resultados das partidas considerando o mando de campo. Em todas as federações este fator vem se mostrando decisivo com peso de até 56,68%, como é o caso da Bolívia.")),
     
     tabItem(tabName = "confrontos",
             h2("Aproveitamento nos confrontos internacionais"),
@@ -134,9 +138,9 @@ Acima do 50% de aproveitamento, além do Brasil, temos a Argentina, Colômbia e 
     
     tabItem(tabName = "estatisticas",
             h2("Estatísticas dos clubes"),
+            HTML("Podemos observar estatísticas dos clubes participantes do ranking. Número de partidas computadas, vitórias, empates, gols feitos (GP), gols sofridos (GC) e o aproveitamento histórico das equipes."),
             uiOutput("estatisticas_ui"),
             dataTableOutput("estatisticas"),
-            HTML("Podemos observar estatísticas dos clubes participantes do ranking. Número de partidas computadas, vitórias, empates, gols feitos (GP), gols sofridos (GC) e o aproveitamento histórico das equipes."),
             h4("Vídeo demonstrativo:"),
             HTML('<iframe width="600" height="400" src="https://www.youtube.com/embed/N0i1gpY7-NA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')),
     
@@ -167,8 +171,35 @@ Acima do 50% de aproveitamento, além do Brasil, temos a Argentina, Colômbia e 
     # Modelagem
     #################################################################################
     
-    tabItem(tabName = "model",
-            withMathJax("")),
+    tabItem(tabName = "processo",
+            h2("Processo de modelagem"),
+            HTML("<p> O cerne do modelo é muito simples: processar a base de jogos em ordem cronológica, atualizando, a cada partida, o rating Elo das equipes envolvidas, utilizando um algoritmo para calcular esse valor. Contudo, para podermos chegar a esse passo, precisamos estabelecer alguns parâmetros para o modelo."),
+            HTML("<p> Primeiramente, o ranking Elo trabalha com um algoritmo de “soma zero”, i.e., a cada partida, os pontos que uma equipe ganha são equivalentes aos pontos que a outra equipe perde. Isso significa dizer que existe um rating médio, que deve corresponder a um patamar de times “nem bons nem ruins”. No nosso modelo, escolhemos o rating médio de 1500, que deve se manter ao longo do tempo."),
+            HTML("<p> Para inicializar o ranking, no tempo inicial (janeiro de 2002), pensamos em avaliar todos os times com o rating médio de 1500, já que não estávamos considerando informações precedentes àquele momento. Não obstante, observamos que a prática levaria a uma certa distorção nos ratings atualizados. Os primeiros colocados no ranking seriam os times com maior sucesso em seus torneios locais, que, observamos, não correspondiam aos times de maior sucesso nos torneios continentais."),
+            HTML("<p> Nossa interpretação para o fenômeno foi de que alguns torneios nacionais são mais desequilibrados que outros e, portanto, um time com supremacia local não seria necessariamente melhor que um time de outro país que estivesse “no bolo” dos concorrentes ao título. Para corroborar nossa tese, computamos o aproveitamento dos times de cada país em confrontos internacionais e verificamos que os países de melhor desempenho são alguns dos que têm os torneios nacionais mais equilibrados e, com isso, acabavam subestimados no ranking."),
+            HTML("<p> As seções 'Confrontos internacionais' e 'Estatísticas dos clubes' na aba 'Análise exploratória' podem dar uma boa noção do quão diferentes são a lista dos países com melhor aproveitamento internacional e a dos países dos clubes com melhor aproveitamento."),
+            HTML("<p> A forma encontrada para solucionar o problema foi inicializar o ranking com valores distintos para times de países diferentes. Foi calculado um rating “para cada país”, em função do desempenho de seus times nas três edições da Copa Libertadores imediatamente anteriores ao nosso tempo inicial. Depois disso, ponderamos esse “rating nacional” em função de número de times do país na base e inicializamos cada time com esse valor ponderado, de modo a manter o rating médio de 1500."),
+            HTML("<p> Reprocessando o ranking ao longo de todo o período, pudemos observar que esse ajuste nos ratings iniciais propiciou uma melhor correlação entre os líderes do ranking mensal e os times considerados mais fortes no respectivo mês. Como exemplo, vale observar que os quatro semifinalistas da atual edição da Copa Libertadores se encontram entre os cinco primeiros colocados do último ranking.")
+            ),
+    
+    tabItem(tabName = "elo",
+            h2("Rating Elo"),
+            HTML("<p> O método base para essa pontuação está o sistema Elo, um método muito famoso usado em larga escala para medir os níveis de força relativa. A vantagem da implementação do Elo está na sua grande simplicidade: temos apenas um valor para cada clube no determinado momento e, quanto maior, melhor é a equipe."),
+            HTML("<p> A diferença de pontos entre as duas equipes está totalmente ligada as suas chances de vencer o confronto, <i>E</i>."),
+            withMathJax("$$ E = {1 \\over {10^{-dr/400}+1}} $$"),
+            HTML("<p> Onde <i>dr</i> é a diferença de pontos no ranking entre as duas equipes."),
+            HTML("<p> A troca de pontos acontece quando os clubes se enfrentam. A quantidade de pontos trocados é feita para que um coeficiente de vitória entre as duas equipes faça a diferença entre as equipes convergir para a real taxa de vitória entre as equipes."),
+            HTML("<p> Usamos a seguinte equacação:"),
+            withMathJax("$$ \\Delta Elo = (R-E)K $$"),
+            HTML("<p> Em que <i>R</i> é o resultado do jogo (1 para vitória, 0,5 para empate e 0 para derrota)."),
+            HTML("<p> <i>K</i> é uma constante que deve ser escolhida: quanto maior o valor de <i>K</i>, mais rapidamente a classificação convergirá para seu real valor, porém teremos variações mais fortes. Um valor menor de <i>K</i> dá mais estabilidade, no entanto, precisa de mais tempo para convergir. Optamos pelo valor de 20 para <i>K</i>."),
+            HTML("<p> Uma vitória por um placar mais elástico é considerada mais expressiva do que uma vitória por um placar estreito, levando em consideração quando a quantidade de pontos é trocada e calculada. Os pontos que são trocados aumentam proporcionalmente à raiz quadrada da diferença de gols."),
+            HTML("<p> Os pontos trocados em caso de vitória ou derrota são determinados da seguinte maneira:"),
+            withMathJax("$$ \\Delta m = {\\Delta Elo \\over {l(\\Theta) + l(\\theta) \\sqrt {\\Delta g}}} \\sqrt {\\Delta g}$$"),
+            HTML("<p> Onde <i>l</i>(&#952;) é a chance para uma diferença de gols específica, <i>l</i>(&#920;) é a chance de ganhar ou perder por qualquer margem de gols e &#916;<i>g</i> é a margem de gols da partida."),
+            HTML("<p> Como podemos verificar na analise exploratória, as equipes tem uma tendência de ter mais chances de vitória por jogar em casa, ou seja, em média as equipes que jogam em casa ganham mais pontos no ranking. Desta maneira, aumentamos a diferença para uma partida em uma certa quantidade de pontos denominada HFA (Vantagem de jogar em casa)."),
+            HTML("<p> Neste projeto optamos por utilizar um HFA constante, igual a 100.")
+    ),
     
     #################################################################################
     
@@ -177,18 +208,22 @@ Acima do 50% de aproveitamento, além do Brasil, temos a Argentina, Colômbia e 
     
     tabItem(tabName = "maiores_pontuacoes",
             h2("Melhores pontuações da medida Elo"),
+            HTML("Aqui apresentamos os maiores picos de pontuações da série histórica da medida Elo, observe que há equipes que aparecem mais vezes, essa análise é feita independentemente das equipes, visando somente a quantidades de pontos alcançados, restringindo apenas a uma entrada da mesma equipe por ano. Nesta tabela destacam-se os clubes do Palmeiras e Flamengo nos dias atuais, que realmente prevalecem no cenário brasileiro. Também vale a pena ressaltar o São Paulo de 2007 que dominava o campeonato brasileiro e conseguiu a quarta melhor pontuação relativamente cedo no ranking."),
             tableOutput("maiores_pontuacoes")),
     
     tabItem(tabName = "tempo_lideranca",
             h2("Clubes que permaneceram mais meses no primeiro lugar do ranking"),
+            HTML("Somando os meses em que cada equipe permaneceu na liderança do ranking, podemos acompanhar os times que mais figuraram entre os melhores da América do Sul. Ênfase para as clubes do São Paulo, Boca Juniors e Cruzeiro que lutaram pelo título de praticamente todos os campeonatos que disputaram neste século e compõem o topo deste ranking."),
             tableOutput("tempo_lideranca")),
     
     tabItem(tabName = "tempo_lideranca_consec",
             h2("Clubes que permaneceram mais meses consecutivos no primeiro lugar do ranking"),
+            HTML("Diferente do outro resultado, aqui podemos analisar as equipes que mais permaneceram consecutivamente no topo do ranking, mantendo resultados e padrão por mais tempo, o que permitiu se sustentar na elite do futebol sul-americanos por mais tempo. Destaque aqui para o São Paulo que conseguiu se manter na primeira posição do ranking por 17 meses consecutivos."),
             tableOutput("tempo_lideranca_consec")),
     
     tabItem(tabName = "elo_medio",
             h2("Elo médio por clube"),
+            HTML("Nesta tabela podemos verificar as equipes mais consistentes no cenário sul-americano. Novamente, destaque para Boca Juniors e São Paulo que apresentam equipes competitivas em praticamente todas as temporadas deste século."),
             tableOutput("elo_medio")),
     
     # Próximos passos
