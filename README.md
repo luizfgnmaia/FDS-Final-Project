@@ -8,10 +8,9 @@ professor Jorge Poco.
 
 O intuito deste projeto é construir um ranking mensal das equipes de
 futebol da Conmebol, a confederação sul-americana de futebol, utilizando
-a metodologia
-(Elo)\[<https://en.wikipedia.org/wiki/Elo_rating_system>\]. Além disso,
-foi construído um site que permita que um usuário busque informações
-sobre clubes e períodos de tempo específicos.
+a metodologia [Elo](https://en.wikipedia.org/wiki/Elo_rating_system).
+Além disso, foi construído um site que permita que um usuário busque
+informações sobre clubes e períodos de tempo específicos.
 
 Site
 ----
@@ -44,13 +43,11 @@ repositório:
 Visto que o site foi feito utilizando o R, os notebooks 3 e 5 foram
 feitos neste software com o uso de alguns dos seus pacotes de
 visualização, para executar estes notebooks pode ser necessária algumas
-instalações, seguem abaixo alguns guias que podem ser úteis: (Como
+instalações, seguem abaixo alguns guias que podem ser úteis: [Como
 utilizar o R no
-Jupyter)\[<https://docs.anaconda.com/anaconda/navigator/tutorials/r-lang/>\]
-e (Como utilizar o Plotly no
-Jupyter)\[<https://plot.ly/r/using-r-in-jupyter-notebooks/>\].
+Jupyter](https://docs.anaconda.com/anaconda/navigator/tutorials/r-lang/)
+e [Como utilizar o Plotly no
+Jupyter](https://plot.ly/r/using-r-in-jupyter-notebooks/).
 
 Por sua vez, para a execução do primeiro notebook, pode ser necessária a
 instalação do pacote selenium para o Python.
-
-<https://luizfgnm.shinyapps.io/ConmebElo/>
