@@ -35,7 +35,7 @@ sidebar <- dashboardSidebar(
              menuSubItem("Mando de campo", tabName = "mando"),
              menuSubItem("Confrontos internacionais", tabName = "confrontos"),
              menuSubItem("Estatísticas dos clubes", tabName = "estatisticas")),
-    menuItem("Modelagem", icon = icon("question"), tabName = "model",
+    menuItem("Modelo", icon = icon("atom"), tabName = "model",
              menuSubItem("Processo de modelagem", tabName = "processo"),
              menuSubItem("Método Elo", tabName = "elo")),
     menuItem("Rankings", icon = icon("trophy"), tabName = "rank"),
@@ -194,12 +194,9 @@ Acima do 50% de aproveitamento, além do Brasil, temos a Argentina, Colômbia e 
             withMathJax("$$ \\Delta Elo = (R-E)K $$"),
             HTML("<p> Em que <i>R</i> é o resultado do jogo (1 para vitória, 0,5 para empate e 0 para derrota)."),
             HTML("<p> <i>K</i> é uma constante que deve ser escolhida: quanto maior o valor de <i>K</i>, mais rapidamente a classificação convergirá para seu real valor, porém teremos variações mais fortes. Um valor menor de <i>K</i> dá mais estabilidade, no entanto, precisa de mais tempo para convergir. Optamos pelo valor de 20 para <i>K</i>."),
-            HTML("<p> Uma vitória por um placar mais elástico é considerada mais expressiva do que uma vitória por um placar estreito, levando em consideração quando a quantidade de pontos é trocada e calculada. Os pontos que são trocados aumentam proporcionalmente à raiz quadrada da diferença de gols."),
-            HTML("<p> Os pontos trocados em caso de vitória ou derrota são determinados da seguinte maneira:"),
-            withMathJax("$$ \\Delta m = {\\Delta Elo \\over {l(\\Theta) + l(\\theta) \\sqrt {\\Delta g}}} \\sqrt {\\Delta g}$$"),
-            HTML("<p> Onde <i>l</i>(&#952;) é a chance para uma diferença de gols específica, <i>l</i>(&#920;) é a chance de ganhar ou perder por qualquer margem de gols e &#916;<i>g</i> é a margem de gols da partida."),
-            HTML("<p> Como podemos verificar na analise exploratória, as equipes tem uma tendência de ter mais chances de vitória por jogar em casa, ou seja, em média as equipes que jogam em casa ganham mais pontos no ranking. Desta maneira, aumentamos a diferença para uma partida em uma certa quantidade de pontos denominada HFA (Vantagem de jogar em casa)."),
-            HTML("<p> Neste projeto optamos por utilizar um HFA constante, igual a 100.")
+            h2("Modificações empregadas"),
+            HTML("<p> Consideramos que uma vitória por um placar mais elástico é mais expressiva do que uma vitória por um placar mais estreito, deste modo, para calcular o ganho ou perda de pontos após uma partida, multiplicamos o &#916; Elo pela raiz da diferença de gols entre os clubes, como sugerido pelo Clubelo."),
+            HTML("<p> Como podemos verificar na analise exploratória, as equipes tem uma tendência de ter mais chances de vitória por jogar em casa, ou seja, em média as equipes que jogam em casa ganham mais pontos no ranking. Desta maneira, aumentamos a diferença para uma partida em uma certa quantidade de pontos denominada HFA (vantagem de jogar em casa). Neste projeto optamos por utilizar um HFA constante, igual a 100.")
     ),
     
     #################################################################################
